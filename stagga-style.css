@@ -2,20 +2,30 @@
     background-color: black;
 }
 #theheader {
-    
+    padding-left: 3%;
+    padding-right: 3%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 100px;
 }
+
 #staggalogonav img{
-    display: block;
     max-width: 100%;
     height: auto;
-    margin-top: 170px;
     justify-content: center;
     align-items: center;
+    display: flex;
 }
+
 #dropdownnav img{
     height:auto;
     width: 50px;
     margin-left:1%;
+}
+
+#test img{
+    height:auto;
+    width: 50px;
+    margin-left:50%;
 }
