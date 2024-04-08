@@ -1,4 +1,21 @@
-section{
-    color:black;
-    height:2000px;
+*{
+    background-color: black;
+}
+#theheader {
+    
+    display: flex;
+    height: 100px;
+}
+#staggalogonav img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 170px;
+    justify-content: center;
+    align-items: center;
+}
+#dropdownnav img{
+    height:auto;
+    width: 50px;
+    margin-left:1%;
 }
