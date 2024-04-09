@@ -2,28 +2,28 @@
     background-color: rgb(0, 0, 0);
 }
 #theheader {
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 1%;
+    padding-right: 1%;
     display: flex;
+    justify-content: center;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex;
     height: auto;
 }
 
-#staggalogonav img{
-    max-width: 30%;
+#staggamainlogo img {
+    max-width: 70%;
     height: auto;
+    margin-left: 10%;
 }
 
-#dropdownnav img{
+#dropdownnav img {
     height:auto;
     width: 50px;
     margin-left:1%;
-    margin-top: 0px;
 }
 
-#test img{
+#searchbar img {
     height:auto;
     width: 50px;
-    margin-left:50%;
 }
