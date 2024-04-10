@@ -14,7 +14,7 @@
 #staggamainlogo img {
     max-width: 70%;
     height: auto;
-    margin-left: 10%;
+    margin-left: 42%;
 }
 
 #dropdownnav img {
@@ -23,7 +23,13 @@
     margin-left:1%;
 }
 
-#searchbar img {
-    height:auto;
-    width: 50px;
+#searchbar {
+    height:30px;
+    width: 200px;
+    color: white;
+    border-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline:none;
 }

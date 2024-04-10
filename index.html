@@ -19,9 +19,52 @@
         </div>
 
         <div id="searchbar">
-            <img src="test.png" alt="test" id="test">
+            <input type="text" placeholder="Search" id="searchbar">
         </div>
     </header> 
+
+    <script> 
+        // Initialize Firebase
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        firebase.initializeApp(firebaseConfig);
+    
+        // Get a reference to your Firebase database
+        var database = firebase.database();
+    
+        // Get the input element
+        var input = document.getElementById("searchInput");
+    
+        // Execute a function when the user presses the Enter key
+        input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the search function
+                search(input.value);
+            }
+        });
+    
+        // Function to perform the search
+        function search(query) {
+            // Query the database based on the search query
+            database.ref('your-database-path').orderByChild('field-to-search').equalTo(query).once('value', function(snapshot) {
+                // Process the search results
+                snapshot.forEach(function(childSnapshot) {
+                    var searchData = childSnapshot.val();
+                    // Do something with the search data
+                    console.log(searchData);
+                });
+            });
+        }
+    </script>
     
 </body>
 </html>
