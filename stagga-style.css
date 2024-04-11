@@ -104,9 +104,19 @@ html, body {
 }
 
 @keyframes infiniteScroll {
-    from {transform: translateX(0) }
-    to {transform: translateX(-100%);}
-  }
+    from {
+        transform: translateX(0) 
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.sectionImg{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
 
 .image-scroller-container {
     display: inline-block;
@@ -114,7 +124,7 @@ html, body {
     white-space: nowrap;
     padding-bottom: 5%;
     margin-bottom: 10%;
-    animation: 10s infiniteScroll infinite linear;
+    animation: 20s infiniteScroll infinite linear;
 }
 
 .image-scroller-container::-webkit-scrollbar {
