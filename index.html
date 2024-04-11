@@ -10,8 +10,15 @@
 </head>
 <body>
     <header id="theheader">
-        <div id="dropdownnav">
-            <img src="icons8-menu-100.png" alt="dropdownicon" id="dropdownicon">
+        <div id="dropdownnav" class="dropdown">
+            <div class="hamburger-icon"></div>
+            <div class="dropdown-content">
+                <a href="#">Stores</a>
+                <a href="#">Fashion</a>
+                <a href="#">Electronics</a>
+                <a href="#">Home & Office</a>
+                <a href="#">Outdoor</a>
+            </div>
         </div>
         
         <div id="staggamainlogo">
@@ -23,7 +30,38 @@
         </div>
     </header> 
 
+    <section id="section1">
+        <div class="image-scroller-container">
+            <img src="Tech.png">
+            <img src="clothes.png">
+            <img src="stoves.png">
+        </div>
+    </section>
+
     <script> 
+
+        //Slider scroll functionality
+        const imagescrollerContainer = document.querySelector('.image-scroller-container');
+
+        const scrollSpeed = 1.5;
+        const scrollableWidth = imagescrollerContainer.scrollWidth;
+
+        function scrollImagesscroller() {
+            imagescrollerContainer.scrollLeft += scrollSpeed;
+
+            // Check if the maximum number of iterations is reached
+            if (imagescrollerContainer.scrollLeft + imagescrollerContainer.clientWidth >= scrollableWidth) {
+                
+                imagescrollerContainer.scrollLeft = 0;
+            }
+        }
+
+        const scrollInterval = setInterval(scrollImagesscroller, 10);
+
+        window.addEventListener('beforeunload', function() {
+            clearInterval(scrollInterval);
+        });
+        
         // Initialize Firebase
         var firebaseConfig = {
             apiKey: "YOUR_API_KEY",
