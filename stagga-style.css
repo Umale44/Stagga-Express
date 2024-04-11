@@ -1,6 +1,11 @@
 *{
     background-color: rgb(0, 0, 0);
 }
+
+html, body {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
 #theheader {
     padding-left: 1%;
     padding-right: 1%;
@@ -98,17 +103,16 @@
 
 @keyframes infiniteScroll {
     from {transform: translateX(0) }
-    to {transform: translateX(calc(0px - 50% - 25px));}
+    to {transform: translateX(-100%);}
   }
 
 .image-scroller-container {
-    display: grid;
-    grid-auto-flow: column;
-    position: relative;
-    overflow-x: auto;
+    display: inline-block;
+    overflow: hidden;
     white-space: nowrap;
-    padding-bottom: 5%; 
+    padding-bottom: 5%;
     margin-bottom: 10%;
+    animation: 10s infiniteScroll infinite linear;
 }
 
 .image-scroller-container::-webkit-scrollbar {
@@ -116,7 +120,7 @@
   }
 
 .image-scroller-container img{
-    width: 800px;
+    width: 850px;
     height: 350px;
     aspect-ratio: 2 / 3;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
