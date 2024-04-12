@@ -4,83 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stagga Express | The Home of express delivery | Stores</title>
-    <link rel="stylesheet" href="stagga-style.css">
+    <link rel="stylesheet" href="stores.css">
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
-    <style>
-          h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
-    color: white;
-    text-align: center;
-    background:none;
-}
-.stores-background {
-    position: relative;
-    width: 100%;
-    height: 583px;/* Set height to fill the viewport */
-    overflow: hidden;
-}
-
-.stores-background img {
-    width: 100%;
-    height: 583px;
-    object-fit: cover;
-}
-
-.stores-background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 583px; /* Set height to fill the viewport */
-    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha (last value) to change the darkness */
-    z-index: 1;
-}
-.store-info {
-    position: absolute;
-    left: 30px; 
-    margin-top: 0;
-    color: white;
-    display: flex;
-    align-items: flex-start;
-    z-index: 2;
-    margin-top: 20px;
-}
-
-.store-info img {
-    width: 200px; 
-    height: 170px;
-    border-radius: 12%; /* Makes the image edges round */
-    margin-right: 20px;
-}
-
-.store-details {
-    text-align: left;
-}
-
-.store-details h2 {
-    font-size: 24px;
-    margin-bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.rating {
-    font-size: 16px;
-    color: #ffc107; /* Yellow color for rating */
-    margin-bottom: 5px;
-}
-.stores{
-    background-color: gray;
-    color: black;
-}
-    </style>
+    
 </head>
 <body>
     <header id="theheader">
@@ -107,91 +34,61 @@
     <div class="stores-background">
         <img src="StoresBanner.png" alt="Background Image">
     </div>
-    <div class="store-info">
-        <img src="mrp-home.png" alt="Store Image">
-        <div class="store-details">
-            <h2>MRP Home</h2>
-            <div class="rating">Rating: 4.5</div>
-            <p>Description of the store...</p>
+    <div class="store-container">
+        <div class="store-info">
+            <img src="mrp-home.png" alt="Store Image">
+            <div class="store-details">
+                <h2>MRP Home</h2>
+                <div class="rating">Rating: 4.5</div>
+                <p>Championing great design is very important to Mr Price Home, it is who we are & what we do.</p>
+            </div>
+        </div>
+    
+        <div class="store-info">
+            <img src="game.jpg" alt="Store Image">
+            <div class="store-details">
+                <h2>Game</h2>
+                <div class="rating">Rating: 4.2</div>
+                <p>The leading retailer of general merchandise, liquor and home improvement equipment and supplies, and the leading wholesaler of basic foods.</p>
+            </div>
+        </div>
+        <div class="store-info">
+            <img src="studio88.png" alt="Store Image">
+            <div class="store-details">
+                <a href="your-link-url-here" style="text-decoration: none; color: inherit;"><h2>Studio88</h2></a>
+                <div class="rating">Rating: 3.9</div>
+                <p>At Studio 88 we make it our business to bring you the latest in top international and local fashion brands.</p>
+            </div>
+        </div>
+        <div class="store-info">
+            <a href="markham.html"><img src="markham.png"class="Store Image"></a>
+            <div class="store-details">
+                <a href="markham.html" style="text-decoration: none; color: inherit;"><h2>Markham</h2></a>
+                <div class="rating">Rating: 4.2</div>
+                <p>Your new fashion and lifestyle shopping platform and friend you never knew you needed!</p>
+            </div>
+        </div>
+    </div>
+    <div class="store-container">
+        <div class="store-info">
+            <img src="Homecorp.png" alt="Store Image">
+            <div class="store-details">
+                <h2>Home Corp</h2>
+                <div class="rating">Rating: 4.5</div>
+                <p>Description of store...</p>
+            </div>
+        </div>
+    
+        <div class="store-info">
+            <img src="Incredibleconec.png" alt="Store Image">
+            <div class="store-details">
+                <h2>Incredible Connections</h2>
+                <div class="rating">Rating: 4.2</div>
+                <p>Description of store...</p>
+            </div>
         </div>
     </div>
     <h1>STORES</h1>
-    
-    
 </body>
 </html>
-<!--<section id="section1">
-        <div class="image-scroller-container">
-            <img src="Tech.png">
-            <img src="clothes.png">
-            <img src="stoves.png">
-        </div>
-    </section>
-
-    <script> 
-
-        //Slider scroll functionality
-        const imagescrollerContainer = document.querySelector('.image-scroller-container');
-
-        const scrollSpeed = 1.5;
-        const scrollableWidth = imagescrollerContainer.scrollWidth;
-
-        function scrollImagesscroller() {
-            imagescrollerContainer.scrollLeft += scrollSpeed;
-
-            // Check if the maximum number of iterations is reached
-            if (imagescrollerContainer.scrollLeft + imagescrollerContainer.clientWidth >= scrollableWidth) {
-                
-                imagescrollerContainer.scrollLeft = 0;
-            }
-        }
-
-        const scrollInterval = setInterval(scrollImagesscroller, 10);
-
-        window.addEventListener('beforeunload', function() {
-            clearInterval(scrollInterval);
-        });
-        
-        // Initialize Firebase
-        var firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-        firebase.initializeApp(firebaseConfig);
-    
-        // Get a reference to your Firebase database
-        var database = firebase.database();
-    
-        // Get the input element
-        var input = document.getElementById("searchInput");
-    
-        // Execute a function when the user presses the Enter key
-        input.addEventListener("keyup", function(event) {
-            // Number 13 is the "Enter" key on the keyboard
-            if (event.keyCode === 13) {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Trigger the search function
-                search(input.value);
-            }
-        });
-    
-        // Function to perform the search
-        function search(query) {
-            // Query the database based on the search query
-            database.ref('your-database-path').orderByChild('field-to-search').equalTo(query).once('value', function(snapshot) {
-                // Process the search results
-                snapshot.forEach(function(childSnapshot) {
-                    var searchData = childSnapshot.val();
-                    // Do something with the search data
-                    console.log(searchData);
-                });
-            });
-        }
-    </script>-->
-    <!--
         
