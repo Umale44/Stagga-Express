@@ -1,4 +1,1 @@
-
-
-INSERT INTO dealsoftheweek (image_name, image_data, description)
-VALUES ('braii test.png', LOAD_FILE("C:\Users\cse22-057\RnI Website\Stagga-Express\braii test.png"), 'Description of image 1');
+GRANT FILE ON *.* TO 'admin'@'staggadb.cfh0uy2za9bf.us-east-1.rds.amazonaws.com' IDENTIFIED BY 'Staggawins';

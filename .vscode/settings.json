@@ -1,18 +1,3 @@
 {
-    "sqltools.connections": [
-        {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
-            "previewLimit": 50,
-            "server": "staggadb.cfh0uy2za9bf.us-east-1.rds.amazonaws.com",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "Staggaconnect",
-            "database": "Stagga",
-            "username": "admin",
-            "askForPassword": true
-        }
-    ]
+    "sqltools.connections": []
 }

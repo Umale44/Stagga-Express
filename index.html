@@ -51,32 +51,9 @@
     </section>
 
     <script> 
-                // Fetch data from the database and dynamically generate HTML elements
-        // Replace 'YOUR_API_ENDPOINT' with the endpoint to fetch data from your API
-        fetch('staggadb.cfh0uy2za9bf.us-east-1.rds.amazonaws.com')
-            .then(response => response.json())
-            .then(data => {
-                const dealsContainer = document.getElementById('dealsContainer');
 
-                // Iterate over the data and create HTML elements for each deal
-                data.forEach(deal => {
-                    const dealElement = document.createElement('div');
-                    dealElement.classList.add('deal-item');
-
-                    // Create an image element and set its source to the image URL from the database
-                    const imageElement = document.createElement('img');
-                    imageElement.src = deal.image_url;
-                    dealElement.appendChild(imageElement);
-
-                    // Create other elements for additional information like description, price, etc.
-                    // Add these elements to the dealElement
-
-                    // Finally, append the dealElement to the dealsContainer
-                    dealsContainer.appendChild(dealElement);
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
     </script>
+    
     <footer class="social-footer">
         <div class="socials">
             <a href="https://www.google.com/"><i class="fab fa-facebook grow"></i></a>
