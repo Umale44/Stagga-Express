@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stagga Express | The Home of express delivery | Stores | Markham</title>
+    <link rel="stylesheet" href="stagga-style.css">
     <link rel="stylesheet" href="stores.css">
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
@@ -147,51 +148,7 @@
             text-align: center; /* Center align text */
         }
 
-        .container2 {
-            margin: auto;
-            padding-top: 45px;
-            display: flex;
-            height: 100%;
-            border-top: 40px solid white;
-            background-color: black;
-        }
- 
-        .container2 ul {
-            padding: 10px 115px;
-            list-style-type: none;
-        }
- 
-        .container2 a:hover {
-            border-bottom: 2px solid white
-        }
- 
-        .container2 img {
-            margin-left: 245px;
-        }
- 
-        .socials {
-            background-color: black;
-            padding: 20px;
-            text-align: center;
-        }
- 
-        .socials a {
-            margin-right: 15px;
-            font-size: 3em;
-        }
- 
-        .grow {
-            transition: all .2s ease-in-out;
-        }
- 
-        .grow:hover {
-            transform: scale(1);
-            color: #e91e63;
-        }
- 
-        .sidebar a:hover {
-            color: white;
-        }
+
     </style>
     <script src="script.js" defer></script>
 </head>
@@ -214,6 +171,13 @@
 
         <div id="searchbar">
             <input type="text" placeholder="Search" id="searchbar">
+        </div>
+        <div id="login">
+            <button onclick="openLoginPopup()">Login</button>
+        </div>
+
+        <div id="signup">
+            <button onclick="openSigninPopup()">Sign-up</button>
         </div>
     </header> 
     
@@ -501,7 +465,7 @@
             <a href="https://www.facebook.com/WarnerBrosPictures/"><i class="fab fa-facebook grow"></i></a>
             <a href="https://twitter.com/warnerbros?lang=en"><i class="fab fa-twitter-square grow"></i></a>
             <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
-            TM & © 2024 Stagga Express. All rights reserved.
+            <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
         </div>
     </footer>  
 </body>

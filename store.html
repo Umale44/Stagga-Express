@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stagga Express | The Home of express delivery | Stores</title>
+    <link rel="stylesheet" href="stagga-style.css">
     <link rel="stylesheet" href="stores.css">
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
@@ -28,6 +29,13 @@
 
         <div id="searchbar">
             <input type="text" placeholder="Search" id="searchbar">
+        </div>
+        <div id="login">
+            <button onclick="openLoginPopup()">Login</button>
+        </div>
+
+        <div id="signup">
+            <button onclick="openSigninPopup()">Sign-up</button>
         </div>
     </header> 
     
@@ -89,11 +97,36 @@
         </div>
     </div>
     <h1>STORES</h1>
-    <footer class="social-footer">
+
+    <footer class="navbar">
+        <div class="container2 flex2">
+            <ul>
+                <li><h3>Contact Us</h3></li>
+                <li>Plot 50661, Fairgrounds Office Park</li>
+                <li>Gaborone, Botswana</li>
+                <li>+267 301 2345</li>
+            </ul>
+           
+            <nav>
+                <ul>
+                    <li><h3>Site Links</h3></li>
+                    <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+                    <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
+                    <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
+                    <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
+                    <li><a href="homeandoffice.html" style="text-decoration: none;">Home and Office</a></li>
+                    <li><a href="Form.html" style="text-decoration: none;">Join Us</a></li>
+                </ul>
+            </nav>
+            <img src="staggalogosmall.png" alt="WarnerBrosPicture">
+        </div>
+
+       
         <div class="socials">
-            <a href="https://www.google.com/"><i class="fab fa-facebook grow"></i></a>
-            <a href="https://www.google.com/"><i class="fab fa-twitter-square grow"></i></a>
-            <a href="https://www.google.com/"><i class="fab fa-instagram grow"></i></a>
+            <a href="https://www.facebook.com/WarnerBrosPictures/"><i class="fab fa-facebook grow"></i></a>
+            <a href="https://twitter.com/warnerbros?lang=en"><i class="fab fa-twitter-square grow"></i></a>
+            <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
+            <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
         </div>
     </footer>
 </body>

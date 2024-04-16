@@ -1,6 +1,7 @@
 *{
     background-color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 html, body {
@@ -12,22 +13,71 @@ html, body {
     padding-right: 1%;
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: ;
+    position: relative;
     align-items: flex;
     height: auto;
+    width: 100%;
 }
 
 #staggamainlogo img {
+    position: relative;
     max-width: 70%;
     height: auto;
-    margin-left: 42%;
+    margin-left: 257.5%;
 }
+
+#login, #signup {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#login button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 300px;
+    cursor: pointer;
+}
+
+#signup button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+    border-radius: 90%;
+}
+
+#searchbar {
+    height:30px;
+    width: 200px;
+    color: white;
+    border-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline:none;
+    margin-left: 520px;
+}
+
 
 .hamburger-icon {
     width: 30px;
     height: 20px;
     position: relative;
-    margin-left:1%;
+    margin-left:-230%;
     cursor: pointer;
 }
 
@@ -69,6 +119,7 @@ html, body {
     z-index: 2;
     border: none;
     outline: none;
+    margin-left:-4.2%;
 }
 
 .dropdown-content a {
@@ -91,17 +142,6 @@ html, body {
     padding: 20px 20px;
 }
 
-
-#searchbar {
-    height:30px;
-    width: 200px;
-    color: white;
-    border-color: white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline:none;
-}
 
 @keyframes infiniteScroll {
     from {
@@ -131,7 +171,7 @@ html, body {
     white-space: nowrap;
     padding-bottom: 5%;
     margin-bottom: 10%;
-    animation: 20s infiniteScroll infinite linear;
+    animation: 30s infiniteScroll infinite linear;
 }
 
 .deals-of-the-week-container .product {
@@ -141,7 +181,7 @@ html, body {
     padding-bottom: 5%;
     margin-bottom: 10%;
     animation: 20s infiniteScroll infinite linear;
-    margin-left: 40px;
+    margin-left: 100px;
 }
 
 .image-scroller-container::-webkit-scrollbar {
@@ -164,8 +204,9 @@ html, body {
     height: 220px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   }
+ 
 
-  .product {
+.product {
     position: relative; /* Set the position of the product container to relative */
     width: 250px;
     border: 1px solid #ccc; /* Add a border around the product */
@@ -212,7 +253,29 @@ html, body {
     margin-left: 40px;
 }
 
-  .social-footer {
+.container2 {
+    margin: auto;
+    padding-top: 45px;
+    display: flex;
+    height: 100%;
+    border-top: 10px solid white;
+    background-color: black;
+}
+
+.container2 ul {
+    padding: 10px 115px;
+    list-style-type: none;
+}
+
+.container2 a:hover {
+    border-bottom: 2px solid white
+}
+
+.container2 img {
+    margin-left: 400px;
+}
+
+.social-footer {
     background-color:black;
     padding: 20px;
     display: flex;
@@ -224,6 +287,7 @@ html, body {
 .socials {
     display: flex; /* Make the social icons container a flex container */
     align-items: center; /* Align icons to the right */
+    margin-left: 95px;
 }
 
 .socials a {
@@ -234,10 +298,24 @@ html, body {
 }
 
 .socials a:first-child {
-    margin-left: 0; /* Remove top margin for the first icon */
+    margin-left: 20px; /* Remove top margin for the first icon */
 }
 
 .socials a:hover {
     color: #e91e63;
     transform: scale(1.5);
 }
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1);
+    color: #e91e63;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+

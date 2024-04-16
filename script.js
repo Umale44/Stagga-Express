@@ -121,3 +121,14 @@ const initSliderPants = () => {
 }
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
+
+//login popup
+// Function to open login popup
+function openLoginScreen() {
+    document.getElementById('loginPopup').style.display = 'block';
+}
+
+// Function to close login popup
+function closeLoginScreen() {
+    document.getElementById('loginPopup').style.display = 'none';
+}
