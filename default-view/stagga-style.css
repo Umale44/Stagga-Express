@@ -9,58 +9,30 @@ html, body {
 }
 
 #theheader {
-    padding-left: 1%;
-    padding-right: 1%;
     display: flex;
-    justify-content: center;
-    justify-content: ;
-    position: relative;
-    align-items: flex;
-    height: auto;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
 }
 
-#staggamainlogo img {
-    position: relative;
-    max-width: 70%;
-    height: auto;
-    margin-left: 257.5%;
+#dropdownnav {
+    /*order: -1; /* Move to the beginning */
+    margin-right: auto; /* Push to the left */
+    margin-left: 3.5%;
 }
 
-#login, #signup {
-    text-align: center;
-    margin-top: 50px;
+#staggamainlogo {
+    margin-left: 13%; /* Center align */
 }
-
-#login button {
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 20px;
-    margin-left: 300px;
-    cursor: pointer;
-}
-
-#signup button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 20px;
-    margin-left: 40px;
-    cursor: pointer;
-    border-radius: 90%;
+#staggamainlogo img{
+    height: 150px;
 }
 
 #searchbar {
+    margin-left: auto; /* Push to the right */
+    margin-right: -41%;
+    margin-bottom: 10px; /* Space between search bar and buttons */
     height:30px;
     width: 200px;
     color: white;
@@ -69,15 +41,25 @@ html, body {
     border-left: none;
     border-right: none;
     outline:none;
-    margin-left: 520px;
+    
 }
-
+#login,
+#signup {
+    margin-top: 100px; /* Space between buttons */
+}
+#login{
+    margin-right: 2%;
+    margin-left: auto;
+}
+#signup{
+    margin-right: 8%;
+}
 
 .hamburger-icon {
     width: 30px;
     height: 20px;
     position: relative;
-    margin-left:-230%;
+    margin-left:0px;
     cursor: pointer;
 }
 
@@ -136,10 +118,6 @@ html, body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-#dropdownnav {
-    padding: 20px 20px;
 }
 
 
@@ -272,7 +250,7 @@ html, body {
 }
 
 .container2 img {
-    margin-left: 400px;
+    margin-left: 350px;
 }
 
 .social-footer {
@@ -315,7 +293,4 @@ html, body {
     color: #e91e63;
 }
 
-.sidebar a:hover {
-    color: white;
-}
 

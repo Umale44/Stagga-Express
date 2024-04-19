@@ -23,20 +23,21 @@
         </div>
         
         <div id="staggamainlogo">
-            <a href="index.html"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
+            <a href="index.php"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
         </div>
 
         <div id="searchbar">
             <input type="text" placeholder="Search" id="searchbar">
         </div>
-
         <div id="login">
-            <button onclick="openLoginScreen()">Login</button>
+            <button class="login">Login</button>
         </div>
 
         <div id="signup">
-            <button onclick="openSigninPopup()">Sign-up</button>
-        </div>
+            <button class="signup">Sign-up</button>
+        </div>       
+
+        
     </header> 
 
     <div class="sectionImg">
@@ -51,7 +52,6 @@
             <img src="stoves.png">    
         </div>
     </div>
-
     <section id="section2">
         <div class= "deals-of-the-week-container">
             <h2>Win Big With This Weeks Deals</h2>
@@ -98,7 +98,7 @@
             <nav>
                 <ul>
                     <li><h3>Site Links</h3></li>
-                    <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+                    <li><a href="index.php" style="text-decoration: none;">Home</a></li>
                     <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
                     <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
                     <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
