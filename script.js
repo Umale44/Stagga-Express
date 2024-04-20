@@ -123,12 +123,22 @@ window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
 
 //login popup
-// Function to open login popup
-function openLoginScreen() {
-    document.getElementById('loginPopup').style.display = 'block';
-}
+/* Function to open login popup
+/*document.querySelector("#login").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
 
-// Function to close login popup
-function closeLoginScreen() {
-    document.getElementById('loginPopup').style.display = 'none';
-}
+document.querySelector(".popup .close").addEventListener("click",function(){
+    document.querySelector(".popup").classList.remove("active");
+});*/
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get login button
+    const loginButton = document.querySelector('#login');
+
+    // Add click event listener
+    loginButton.addEventListener('click', function() {
+        document.querySelector(".popup").classList.add("active")
+        alert('Login button clicked!');
+    });
+});
