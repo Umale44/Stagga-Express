@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.sliderwrapper .image-list{
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(10, 1fr);
+    overflow-x: auto;
+}
+.sliderwrapper .image-list .image{
+    object-fit: cover;
+}
+.container{
+    max-width: 1500px;
+    width:80%
+}
+
+.sliderwrapper .product-row {
+    display: grid; /* Use flexbox for the product row */
+    justify-content: space-between; /* Distribute products evenly across the row */
+    margin-bottom: 20px; /* Add some space between rows */
+    position: relative;
+    grid-template-columns: repeat(10, 1fr);
+    overflow-x: auto; /* Hide overflow to create the sliding effect */
+} 

@@ -1,0 +1,191 @@
+*{
+    background-color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    background:none;
+}
+h2{
+    color: white;
+    background: none;
+}
+ha{
+    color: white;
+    background: none;
+    font-size: 50px;
+    font-weight: bolder;
+}
+h3{
+    color: white;
+    background: none;
+}
+h4{
+    background: none;
+}
+.ha{
+    color: white;
+    font-size: 40px;
+}
+
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0) 
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.sectionImg-outdoors{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.image-scroller-container-outdoors{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 20s infiniteScroll infinite linear;
+    padding-bottom: 2%;
+}
+
+.image-scroller-container-outdoors::-webkit-scrollbar {
+    height: 8px;
+  }
+
+.image-scroller-container-outdoors img{
+    width: 850px;
+    height: 350px;
+    aspect-ratio: 2 / 3;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+.outdoor{
+    background-color: gray;
+    color: black;
+}
+.outdoor-background {
+    position: relative;
+    width: 100%;
+    height: 583px;/* Set height to fill the viewport */
+    overflow: hidden;
+}
+
+.outdoor-background img {
+    width: 100%;
+    height: 583px;
+    object-fit: cover;
+}
+.outdoor-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 583px; /* Set height to fill the viewport */
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha (last value) to change the darkness */
+    z-index: 1;
+    
+}
+
+.outdoor-container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    gap: 170px; /* Space between each outdoor-category */
+    margin-top: -120px;
+}
+
+.outdoor-category {
+    position: relative;
+    align-items: center;
+    z-index: 3;
+}
+
+.outdoor-category img {
+    width: 280px;
+    height: 280px;
+    display: block;
+}
+
+.shop-now a{
+    text-decoration: none;
+    color: white;
+    width: 120px;
+    background: #1071E5;
+    padding: 10px;
+    display: inline-block;
+}
+.shop-now a:hover{
+    color: #1071E5;
+    background: white;
+}
+.bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: none;
+}
+
+/* Remove default background styling */
+.bottom-left h2{
+    margin: 0;
+    background: none; /* Remove background */
+}
+
+.stores-background {
+    position: relative;
+    width: 100%;
+    height: 583px;/* Set height to fill the viewport */
+    overflow: hidden;
+}
+
+.stores-background img {
+    width: 100%;
+    height: 583px;
+    object-fit: cover;
+}
+
+.outdoor-kway{
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+}
+.outdoor-kway img{
+    width:100%;
+    height: auto;
+}
+.bottom-left-kway {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    color: white;
+    padding: 10px;
+    background: none;
+}
+
+.shop-now-container {
+    display: flex; /* Use flexbox */
+    background: none;
+}
+
+.shop-now {
+    margin-right: 10px; /* Add spacing between the links */
+}
+
+.shop-now:last-child {
+    margin-right: 0; /* Remove margin for the last link */
+}

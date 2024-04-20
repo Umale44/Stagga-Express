@@ -1,3 +1,9 @@
+<?php 
+    //register user
+    include 'includes/signuphandler.inc.php'
+    
+?>
+
 <style>
     <?php include 'stagga-style.css';?>
 </style>
@@ -15,9 +21,9 @@
     <div class="main-container">
         <section class="form-container">
             <div class="title">
-                <img src="staggalogosmall.png" alt="logo">
+            <a href="index.php"><img src="staggalogosmall.png" alt="staggalogo"></a>
                 <h1>SIGN UP</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique quae quia reprehenderit nobis porro omnis libero cumque dolorem deleniti veniam blanditiis nihil repellendus nisi assumenda quibusdam eligendi, ullam sit a!</p>
+                <p>Don't have an account?. Sign up here</p>
 
             </div>
             <form action="" method="post">
@@ -27,9 +33,25 @@
                 </div>
 
                 <div class="input-field">
+                    <p>your surname <sup>*</sup></p>
+                    <input type="text" name="surname" registered placeholder="enter your surname" maxlength="50">
+                </div>
+
+                <div class="input-field">
+                    <p>your address <sup>*</sup></p>
+                    <input type="text" name="address" registered placeholder="enter your address" maxlength="50"
+                    oninput="this.value = this.value.replace(/\s/g,'')">
+                </div>
+
+                <div class="input-field">
                     <p>your email <sup>*</sup></p>
                     <input type="text" name="email" registered placeholder="enter your email address" maxlength="50"
                     oninput="this.value = this.value.replace(/\s/g,'')">
+                </div>
+
+                <div class="input-field">
+                    <p>your username <sup>*</sup></p>
+                    <input type="text" name="username" registered placeholder="enter your username" maxlength="50">
                 </div>
 
                 <div class="input-field">

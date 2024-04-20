@@ -1,28 +1,33 @@
 <?php
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        $username = $_POST["username"];
-        $pwd = $_POST["pwd"];
-        $email = $_POST["email"];
-        try{
-            require_once "connection.php";
-            $query = "INSERT INTO users (username, pwd, email) VALUES
-            (:username, :pwd, :email);";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $address = $_POST["address"];
+    $name = $_POST["name"];
+    $surname = $_POST["surname"];
 
-            $stmt = $pdo->prepare($query);
+    try {
+        require_once "connection.php";
+        $query = "INSERT INTO users (username, name, surname, email, address, usertype, password) VALUES
+            (:username, :name, :surname, :email, :address, 'customer', :password);";
 
-            $stmt->bindParam(":username", $username);
-            $stmt->bindParam(":pwd", $pwd);
-            $stmt->bindParam(":email", $email);
-            $stmt->execute();
+        $stmt = $pdo->prepare($query);
 
-            $pdo = null;
-            $stmt = null;
-            header("Location: ../signup.php");
-            die();
-        }catch (PDOException $e) {
-            die("Query failed: " . $e->getMessage());
-        }
-    }else{
-        header("Location: ../signup.php");
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":surname", $surname);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":address", $address);
+        $stmt->bindParam(":password", $password);
+        $stmt->execute();
+
+        $pdo = null;
+        $stmt = null;
+        header("Location: signup.php");
+        die();
+    } catch (PDOException $e) {
+        die("Query failed: " . $e->getMessage());
     }
+} 

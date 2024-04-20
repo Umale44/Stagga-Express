@@ -1,7 +1,46 @@
 *{
-    background-color: black;
-}
-.main-container{
-    width: 50%;
+    background-color: rgb(155, 147, 147);
     
 }
+.main-container{
+    max-width: 500px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.title, h1{
+    background-color: #000000;
+}
+
+.title img{
+    height: 100px;
+    background: none;
+}
+
+form {
+    margin-top: 5px;
+    background-color: #000000;
+}
+
+.input-field{
+    display: block;
+    width: 100%;
+    /*padding: 3px;*/
+    background-color: #000000;
+}
+.form-container, p, sup, input, a{
+    background-color: #000000;
+    margin-top: 3px;
+}
+input{
+    margin-top: 2px;
+    color: #000000;
+    background-color: aliceblue;
+}
+
+

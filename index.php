@@ -10,6 +10,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
 </head>
 <body>
+<?php
+// Check if the constant INCLUDED_IN_HOME is defined (indicating inclusion in home.php)
+if (!defined('INCLUDED_IN_HOME')) {
+    // Include the header only if not included in home.php
+    echo '
     <header id="theheader">
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
@@ -30,15 +35,16 @@
             <input type="text" placeholder="Search" id="searchbar">
         </div>
         <div id="login">
-            <button class="login">Login</button>
+            <a href="login.php"><button class="login">Login</button></a>
         </div>
 
         <div id="signup">
-            <button class="signup">Sign-up</button>
+            <a href="signupcusorbus.html"><button class="signup">Sign-up</button></a>
         </div>       
 
-        
-    </header> 
+    </header>';
+}
+?>
 
     <div class="sectionImg">
         <div class="image-scroller-container">
