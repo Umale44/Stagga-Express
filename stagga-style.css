@@ -281,7 +281,8 @@ html, body {
 
 .socials a:hover {
     color: #e91e63;
-    transform: scale(1.5);
+   
+    
 }
 
 .grow {
@@ -291,6 +292,7 @@ html, body {
 .grow:hover {
     transform: scale(1);
     color: #e91e63;
+    overflow: hidden;
 }
 
 

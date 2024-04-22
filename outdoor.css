@@ -167,6 +167,7 @@ h4{
 .outdoor-kway img{
     width:100%;
     height: auto;
+    filter: brightness(50%);
 }
 .bottom-left-kway {
     position: absolute;
