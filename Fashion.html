@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stagga Express | The Home of express delivery</title>
+    <link rel="stylesheet" href="Fashion.css">
+    <link rel="stylesheet" href="./stagga-style.css">
+    <link rel="icon" href="staggalogosmall.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
+    <style>  
+        .products {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: white;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }          
+
+        .product {
+            position: relative;
+            flex: 0 1 calc(20% - 10px);
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            color: white;
+            background-color: #007bff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;
+        }
+
+        .slider-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.slider {
+    width: 30%; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    background-color: #ccc; /* Adjust the background color as needed */
+    border: 1px solid #000; /* Add border style as needed */
+}
+
+
+
+    </style>
+</head>
+<body>
+   <header id="theheader">
+        <div id="dropdownnav" class="dropdown">
+            <div class="hamburger-icon"></div>
+            <div class="dropdown-content">
+                <a href="store.html" class="stores">Stores</a>
+                <a href="#">Fashion</a>
+                <a href="#">Electronics</a>
+                <a href="#">Home & Office</a>
+                <a href="outdoor.html">Outdoor</a>
+            </div>
+        </div>
+        
+        <div id="staggamainlogo">
+            <a href="index.php"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
+        </div>
+
+        <div id="searchbar">
+            <input type="text" placeholder="Search" id="searchbar">
+        </div>
+        <div id="login">
+            <a href="login.php"><button class="login">Login</button></a>
+        </div>
+
+        <div id="signup">
+            <a href="signupcusorbus.html"><button class="signup">Sign-up</button></a>
+        </div> 
+    </header> 
+
+       
+    </div>
+
+    <div class="fashion-background">
+        <img src="./Fashion background.jpg" alt="Background Image">
+        <div class="bo">
+            <h1>FASHION</h1>
+        </div>
+    </div>
+
+    <section class="fashion-container">
+        <div class="fashion-category">
+            <img src="./Foschini logo.png" alt="hike-equipment">
+            <div class="bottom-left">
+              
+                <h3 class="shop-now"><a href="#">SHOP NOW</a></h3>
+            </div>
+        </div>
+
+        <div class="fashion-category">
+            <img src="./markham.png" alt="hike-equipment">
+            <div class="bottom-left">
+                <h3 class="shop-now"><a href="./markham.html">SHOP NOW</a></h3>
+            </div>
+        </div>
+
+        <div class="fashion-category">
+            <img src="./Mr-Price fashion logo.jpg" alt="hike-equipment">
+            <div class="bottom-left">
+                <h3 class="shop-now"><a href="#">SHOP NOW</a></h3>
+            </div>
+        </div>
+    </section>
+  
+    
+    <!-- Advertised Items -->
+   <section class="products women-clothing">
+    <h2>Women's Clothing</h2>
+    <div class="product-subsection">
+        <h3>Tops</h3>
+        <div class="product-row">
+            <!-- Add women's tops products here -->
+            <div class="product">
+                <img src="./Foschini top.webp" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <p>MR Price</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="top1.webp" alt="Top 1">
+                <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="top1.webp" alt="Top 1">
+                <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="top1.webp" alt="Top 1">
+                <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+              
+           
+            <!-- Add more women's tops products here -->
+        </div>
+    </div>
+    <hr> 
+    <div class="product-subsection">
+        <h3>Pants</h3>
+        <div class="product-row">
+            <!-- Add women's pants products here -->
+            <div class="product">
+                <img src="#" alt="Pants 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <p>MR Price</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more women's pants products here -->
+        </div>
+    </div>
+    <hr> 
+    <div class="product-subsection">
+        <h3>Accessories</h3>
+        <div class="product-row">
+            <!-- Add women's jewelry products here -->
+            <div class="product">
+                <img src="#" alt="Jewelry 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <p>MR Price</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more women's jewelry products here -->
+        </div>
+    </div>
+</section>
+
+<section class="products men-clothing">
+    <h2>Men's Clothing</h2>
+    <div class="product-subsection">
+        <h3>Tops</h3>
+        <div class="product-row">
+            <!-- Add men's tops products here -->
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <p>MR Price</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more men's tops products here -->
+        </div>
+    </div>
+    <hr> 
+    <div class="product-subsection">
+        <h3>Pants</h3>
+        <div class="product-row">
+            <!-- Add men's pants products here -->
+            <div class="product">
+                <img src="#" alt="Pants 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <p>MR Price</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more men's pants products here -->
+        </div>
+    </div>
+    <hr> 
+    <div class="product-subsection">
+        <h3>Accessories</h3>
+        <div class="product-row">
+            <!-- Add men's accessories products here -->
+            <div class="product">
+                <img src="#" alt="Accessories 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <p>MR Price</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more men's accessories products here -->
+        </div>
+    </div>
+</section>
+<section class="products kids-clothing">
+    <h2>Kids' Clothing</h2>
+    <div class="product-row">
+        <!-- Add kids' clothing products here -->
+        <div class="product">
+            <img src="#" alt="Top 1">
+            <h3>*Product description*</h3>
+            <p>*Price*</p>
+            <p>Kids' Brand</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more kids' clothing products here -->
+    </div>
+    <hr> 
+    <!-- Add more subsections for kids' clothing if needed -->
+</section>
+<section class="slider-container">
+    <div class="slider"></div>
+    <div class="slider"></div>
+    <div class="slider"></div>
+</section>
+
+<footer class="navbar">
+    <div class="container2 flex2">
+        <ul>
+            <li><h3>Contact Us</h3></li>
+            <li>Plot 50661, Fairgrounds Office Park</li>
+            <li>Gaborone, Botswana</li>
+            <li>+267 301 2345</li>
+        </ul>
+       
+        <nav>
+            <ul>
+                <li><h3>Site Links</h3></li>
+                <li><a href="index.php" style="text-decoration: none;">Home</a></li>
+                <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
+                <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
+                <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
+                <li><a href="homeandoffice.html" style="text-decoration: none;">Home and Office</a></li>
+                <li><a href="Form.html" style="text-decoration: none;">Join Us</a></li>
+            </ul>
+        </nav>
+        <img src="staggalogosmall.png" alt="WarnerBrosPicture">
+    </div>
+
+   
+    <div class="socials">
+        <a href="https://www.facebook.com/WarnerBrosPictures/"><i class="fab fa-facebook grow"></i></a>
+        <a href="https://twitter.com/warnerbros?lang=en"><i class="fab fa-twitter-square grow"></i></a>
+        <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
+        <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
+    </div>
+   
+
+</footer>  
+    
+    
+    
+</body>
+</html>
