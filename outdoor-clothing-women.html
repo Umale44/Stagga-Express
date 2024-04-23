@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stagga Express | The Home of express delivery | Stores | MRP Home</title>
+    <link rel="stylesheet" href="stagga-style.css">
+    <link rel="stylesheet" href="stores.css">
+    <link rel="icon" href="staggalogosmall.png"
+		type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <style>
+        .stores-background video {
+            width: 100%;
+            height: 583px;
+            object-fit: cover;
+        }
+       
+        .products {
+            max-width: 1200px; /* Set maximum width for the products container */
+            margin: 0 auto; /* Center the products container */
+            padding: 20px; /* Add some spacing around the products */
+            color: white;
+        }
+
+        .product-row {
+            display: flex; /* Use flexbox for the product row */
+            justify-content: space-between; /* Distribute products evenly across the row */
+            margin-bottom: 20px; /* Add some space between rows */
+        }          
+
+        .product {
+            position: relative; /* Set the position of the product container to relative */
+            flex: 0 1 calc(20% - 10px); /* Each product takes up 20% of the row width with some spacing */
+            border: 1px solid #ccc; /* Add a border around the product */
+            padding: 10px; /* Add spacing inside the product */
+            margin: 10px; /* Add margin around each product */
+            text-align: center; /* Center align text */
+            
+        }
+
+        .add-to-cart {
+            
+            color: white; /* White text color */
+            background-color: #007bff; /* Blue color for the button */
+            padding: 5px 10px; /* Add padding */
+            border: none; /* Remove border */
+            cursor: pointer; /* Add pointer cursor on hover */
+        }
+
+        .product img {
+            width: 100%; /* Make the image fill the width of the product */
+            height:250px; /* Maintain aspect ratio */
+        }
+       .product h3{
+            margin-bottom: 120px;
+        }
+        .price-addtoCartbutton{
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: auto; /* Center the division horizontally */
+            text-align: center; /* Center align text */
+        }
+        .outdoor-clothing-background {
+            position: relative;
+            width: 100%;
+            height: 583px; /* Set height to fill the viewport */
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            text-align: center; /* Center text within container */
+            color: white;
+        }
+
+        .content-wrapper {
+            max-width: 50%; /* Adjust the width of the content as needed */
+        }
+
+        .centered-paragraph {
+            margin-top: 300px; /* Adjust the margin between h1 and paragraph */
+        }
+
+    </style>
+</head>
+<body>
+    <header id="theheader">
+        <div id="dropdownnav" class="dropdown">
+            <div class="hamburger-icon"></div>
+            <div class="dropdown-content">
+                <a href="store.html" class="stores">Stores</a>
+                <a href="#">Fashion</a>
+                <a href="#">Electronics</a>
+                <a href="#">Home & Office</a>
+                <a href="outdoor.html">Outdoor</a>
+            </div>
+        </div>
+        
+        <div id="staggamainlogo">
+            <a href="index.html"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
+        </div>
+
+        <div id="searchbar">
+            <input type="text" placeholder="Search" id="searchbar">
+        </div>
+        <div id="login">
+            <a href="login.php"><button class="login">Login</button></a>
+        </div>
+
+        <div id="signup">
+            <a href="signupcusorbus.html"><button class="signup">Sign-up</button></a>
+        </div> 
+    </header>
+
+    <div class="outdoor-clothing-background">
+        <div class="content-wrapper">
+            <h1>WOMEN'S OUTDOOR CLOTHING</h1>
+            <p class="centered-paragraph">
+                For the fearless women who thrive in the great outdoors. Our women’s clothing range combines outdoor
+                 and safari functionality with a feminine look that also protects against the elements. Shop our range 
+                 for apparel that easily fits in with your lifestyle wherever you are.
+            </p>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <section class="products">
+        <h2>Jackets</h2>
+        <div class="product-row">
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <hr> 
+    </section>
+
+    <section class="products">
+        <h2>Tops</h2>
+        <div class="product-row">
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <hr> 
+    </section>
+
+    <section class="products">
+        <h2>Bottoms</h2>
+        <div class="product-row">
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <hr> 
+    </section>
+
+    <section class="products">
+        <h2>Footwear</h2>
+        <div class="product-row">
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="#" alt="Top 1">
+                <h3>*Product description*</h3>
+                <p>*Price*</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <hr> 
+    </section>
+
+</body>
+</html>
