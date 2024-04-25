@@ -88,6 +88,69 @@ if (!defined('INCLUDED_IN_HOME')) {
         </div>
     </section>
 
+    <section id="section3">
+        <div class= "trending-container">
+            <h2>Trending On Stagga</h2>
+            <div class="product">
+                <img src="LG.png" alt="trending 1">
+                <h3>LG OLED etc.....</h3>
+                <div class="go-to-store-button">
+                    <button class="go-to-store">Go TO Store</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="defy.png" alt="trending 2">
+                <h3>Defy 555L Fridge etc.....</h3>
+                <div class="go-to-store-button">
+                    <button class="go-to-store">Go TO Store</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="hp.png" alt="trending 3">
+                <h3>HP 15s etc.....</h3>
+                <div class="go-to-store-button">
+                    <button class="go-to-store">Go TO Store</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="foschini jacket 5.webp" alt="trending 4">
+                <h3>Slim Fit Two Button Blazer etc.....</h3>
+                <div class="go-to-store-button">
+                    <a href="foschini.html">
+                        <button class="go-to-store">Go TO Store</button>
+                    </a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="foschini top 3.webp" alt="trending 5">
+                <h3>Knit Off the Shoulder Top etc.....</h3>
+                <div class="go-to-store-button">
+                    <a href="foschini.html">
+                        <button class="go-to-store">Go TO Store</button>
+                    </a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="top3.webp" alt="trending 6">
+                <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt etc.....</h3>
+                <div class="go-to-store-button">
+                    <a href="markham.html">
+                        <button class="go-to-store">Go TO Store</button>
+                    </a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="pants5.webp" alt="trending 7">
+                <h3>Men's Markham Multi Fabric Natural Utility Pants etc.....</h3>
+                <div class="go-to-store-button">
+                    <a href="markham.html">
+                        <button class="go-to-store">Go TO Store</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script> 
 
     </script>
