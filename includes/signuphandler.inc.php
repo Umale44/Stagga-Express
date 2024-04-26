@@ -3,31 +3,48 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $email = $_POST["email"];
+    $emailAddress = $_POST["email"];
     $address = $_POST["address"];
-    $name = $_POST["name"];
+    $firstname = $_POST["name"];
     $surname = $_POST["surname"];
+    $age = $_POST["age"];
+
+    // Check if any field is empty
+    if (empty($username) || empty($password) || empty($emailAddress) || empty($address) || empty($firstname) || empty($surname) || empty($age)) {
+        echo '<script>alert("Please fill in all fields."); window.history.back();</script>';
+        exit(); // Prevent further execution
+    }
 
     try {
         require_once "connection.php";
-        $query = "INSERT INTO users (username, name, surname, email, address, usertype, password) VALUES
-            (:username, :name, :surname, :email, :address, 'customer', :password);";
 
+        // Insert user into users table
+        $query = "INSERT INTO users (username, password, usertype) VALUES (:username, :password, 'customer')";
         $stmt = $pdo->prepare($query);
-
         $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":name", $name);
-        $stmt->bindParam(":surname", $surname);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":address", $address);
         $stmt->bindParam(":password", $password);
+        $stmt->execute();
+
+
+        // Insert customer details into customer table
+        $query = "INSERT INTO customer (username, firstname, surname, address, emailAddress, age) VALUES (:username, :firstname, :surname, :address, :emailAddress, :age)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":firstname", $firstname);
+        $stmt->bindParam(":surname", $surname);
+        $stmt->bindParam(":address", $address);
+        $stmt->bindParam(":emailAddress", $emailAddress);
+        $stmt->bindParam(":age", $age);
         $stmt->execute();
 
         $pdo = null;
         $stmt = null;
-        header("Location: signup.php");
-        die();
+        
+        
+        echo '<script>alert("Sign up successful. Click OK to proceed to login."); window.location = "login.php";</script>';
+        exit(); // Prevent further execution
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }
-} 
+}
+

@@ -1,3 +1,8 @@
+<?php
+// Prevent caching
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +15,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
 </head>
 <body>
-<?php
-// Check if the constant INCLUDED_IN_HOME is defined (indicating inclusion in home.php)
-if (!defined('INCLUDED_IN_HOME')) {
-    // Include the header only if not included in home.php
-    echo '
     <header id="theheader">
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
                 <a href="store.html">Stores</a>
-                <a href="#">Fashion</a>
+                <a href="fashion.html">Fashion</a>
                 <a href="#">Electronics</a>
                 <a href="#">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
@@ -42,9 +42,7 @@ if (!defined('INCLUDED_IN_HOME')) {
             <a href="signupcusorbus.html"><button class="signup">Sign-up</button></a>
         </div>       
 
-    </header>';
-}
-?>
+    </header>
 
     <div class="sectionImg">
         <div class="image-scroller-container">
@@ -83,69 +81,6 @@ if (!defined('INCLUDED_IN_HOME')) {
                 <div class="go-to-store-button">
                     <p>Now P6,500.00 from P 9,999</p>
                     <button class="go-to-store">Go To Store</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="section3">
-        <div class= "trending-container">
-            <h2>Trending On Stagga</h2>
-            <div class="product">
-                <img src="LG.png" alt="trending 1">
-                <h3>LG OLED etc.....</h3>
-                <div class="go-to-store-button">
-                    <button class="go-to-store">Go TO Store</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="defy.png" alt="trending 2">
-                <h3>Defy 555L Fridge etc.....</h3>
-                <div class="go-to-store-button">
-                    <button class="go-to-store">Go TO Store</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="hp.png" alt="trending 3">
-                <h3>HP 15s etc.....</h3>
-                <div class="go-to-store-button">
-                    <button class="go-to-store">Go TO Store</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="foschini jacket 5.webp" alt="trending 4">
-                <h3>Slim Fit Two Button Blazer etc.....</h3>
-                <div class="go-to-store-button">
-                    <a href="foschini.html">
-                        <button class="go-to-store">Go TO Store</button>
-                    </a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="foschini top 3.webp" alt="trending 5">
-                <h3>Knit Off the Shoulder Top etc.....</h3>
-                <div class="go-to-store-button">
-                    <a href="foschini.html">
-                        <button class="go-to-store">Go TO Store</button>
-                    </a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="top3.webp" alt="trending 6">
-                <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt etc.....</h3>
-                <div class="go-to-store-button">
-                    <a href="markham.html">
-                        <button class="go-to-store">Go TO Store</button>
-                    </a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="pants5.webp" alt="trending 7">
-                <h3>Men's Markham Multi Fabric Natural Utility Pants etc.....</h3>
-                <div class="go-to-store-button">
-                    <a href="markham.html">
-                        <button class="go-to-store">Go TO Store</button>
-                    </a>
                 </div>
             </div>
         </div>

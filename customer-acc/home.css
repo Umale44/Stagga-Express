@@ -1,0 +1,298 @@
+*{
+    background-color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+html, body {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+#theheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+#dropdownnav {
+    /*order: -1; /* Move to the beginning */
+    margin-right: auto; /* Push to the left */
+    margin-left: 3.5%;
+}
+
+#staggamainlogo {
+    margin-left: 13%; /* Center align */
+}
+#staggamainlogo img{
+    height: 150px;
+}
+
+#searchbar {
+    margin-left: auto; /* Push to the right */
+    margin-right: -41%;
+    margin-bottom: 10px; /* Space between search bar and buttons */
+    height:30px;
+    width: 200px;
+    color: white;
+    border-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline:none;
+    
+}
+#cart,
+#profile {
+    margin-top: 100px; /* Space between buttons */
+}
+#cart{
+    margin-right: 2%;
+    margin-left: auto;
+}
+#profile{
+    margin-right: 8%;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin-left:0px;
+    cursor: pointer;
+}
+
+.hamburger-icon:before, .hamburger-icon:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon:before {
+    top: 0;
+}
+
+.hamburger-icon:after {
+    bottom: 0;
+}
+
+/* Rotate lines to form an X when hovered over */
+.hamburger-icon:hover:before {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.hamburger-icon:hover:after {
+    transform: rotate(-45deg);
+    bottom: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: none;
+    min-width: 200px;
+    height: 100px;
+    z-index: 2;
+    border: none;
+    outline: none;
+    margin-left:-4.2%;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #686868;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0) 
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.sectionImg{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 500px;
+}
+
+.section2{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+
+.image-scroller-container {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 5%;
+    animation: 30s infiniteScroll infinite linear;
+}
+
+.deals-of-the-week-container .product {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 5%;
+    margin-bottom: 10%;
+    animation: 20s infiniteScroll infinite linear;
+    margin-left: 100px;
+}
+
+.image-scroller-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .deals-of-the-week-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+.image-scroller-container img {
+    width: 850px;
+    height: 350px;
+    aspect-ratio: 2 / 3;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .deals-of-the-week-container img {
+    width: 100%;
+    height: 220px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+ 
+
+.product {
+    position: relative; /* Set the position of the product container to relative */
+    width: 250px;
+    border: 1px solid #ccc; /* Add a border around the product */
+    padding: 10px; /* Add spacing inside the product */
+    margin: 10px; /* Add margin around each product */
+    text-align: center; /* Center align text */
+}
+
+  .go-to-store {
+    color: white; /* White text color */
+    background-color: #007bff; /* Blue color for the button */
+    padding: 5px 10px; /* Add padding */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+.go-to-store-button {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto; /* Center the division horizontally */
+    text-align: center; /* Center align text */
+}
+
+.deals-of-the-week-container h3{
+    margin-bottom: 120px;
+    color: white;
+}
+
+.deals-of-the-week-container p{
+    color: white;
+}
+
+.section2 {
+    max-width: 1200px; /* Set maximum width for the products container */
+    margin: 0 auto; /* Center the products container */
+    padding: 20px; /* Add some spacing around the products */
+    color: white;
+}
+
+.deals-of-the-week-container h2 {
+    color: white;
+    margin-left: 40px;
+}
+
+.container2 {
+    margin: auto;
+    padding-top: 45px;
+    display: flex;
+    height: 100%;
+    border-top: 10px solid white;
+    background-color: black;
+}
+
+.container2 ul {
+    padding: 10px 115px;
+    list-style-type: none;
+}
+
+.container2 a:hover {
+    border-bottom: 2px solid white
+}
+
+.container2 img {
+    margin-left: 350px;
+}
+
+.social-footer {
+    background-color:black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the end (right) */
+    align-items: flex-end; /* Align items to the bottom */
+    height: 100px; /* Adjust the height of the footer */
+}
+
+.socials {
+    display: flex; /* Make the social icons container a flex container */
+    align-items: center; /* Align icons to the right */
+    margin-left: 95px;
+}
+
+.socials a {
+    color: white;
+    margin-left: 15px; /* Add margin to create space between icons */
+    font-size: 1.5em;
+    transition: all .2s ease-in-out;
+}
+
+.socials a:first-child {
+    margin-left: 20px; /* Remove top margin for the first icon */
+}
+
+.socials a:hover {
+    color: #e91e63;
+   
+    
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1);
+    color: #e91e63;
+    overflow: hidden;
+}
+
+

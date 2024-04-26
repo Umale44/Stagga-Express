@@ -44,6 +44,12 @@
                 </div>
 
                 <div class="input-field">
+                    <p>age <sup>*</sup></p>
+                    <input type="number" name="age" registered placeholder="enter your age" maxlength="50"
+                    oninput="this.value = this.value.replace(/\s/g,'')">
+                </div>
+
+                <div class="input-field">
                     <p>your email <sup>*</sup></p>
                     <input type="text" name="email" registered placeholder="enter your email address" maxlength="50"
                     oninput="this.value = this.value.replace(/\s/g,'')">
