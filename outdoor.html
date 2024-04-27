@@ -10,6 +10,96 @@
 		type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
         <style>  
+        .container{
+            max-width: 1500px;
+            width:100%
+        }
+        
+
+       .product-row {
+             display: flex; /* Use flexbox for the product row */
+            margin-bottom: 20px; /* Add some space between rows */
+            overflow: hidden; /* Hide overflow to create the sliding effect */
+        }          
+        .sliderwrapper .product-row {
+            display: grid; /* Use flexbox for the product row */
+            margin-bottom: 20px; /* Add some space between rows */
+            scrollbar-width: none;
+            grid-template-columns: repeat(99, 1fr);
+            overflow-x: auto; /* Hide overflow to create the sliding effect */
+        } 
+     
+        .sliderwrapper .product-row::-webkit-scrollbar{
+            display: none;
+        }
+
+        .container .slider-scrollbar{
+            height: 24px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .slider-scrollbar .scrollbar-track{
+            height: 2px;
+            width: 100%;
+            background: rgb(47, 46, 46);
+            position: relative;
+            border-radius: 4px;
+        }
+        .slider-scrollbar:hover .scrollbar-track{
+            height: 4px;
+        }
+        .slider-scrollbar .scrollbar-thumb{
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            background: #ccc;
+            border-radius: inherit;
+            cursor: grab;
+        }
+        .slider-scrollbar .scrollbar-thumb:active{
+            cursor: grabbing;
+            height: 8px;
+            top:-2px;
+        }
+        .slider-scrollbar .scrollbar-thumb::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -10px;
+            bottom: -10px;
+        }   
+        .sliderwrapper{
+            position: relative;
+        }
+        .sliderwrapper .slide-button{
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            color: black; 
+            background: #ccc;
+            font-size: 2.2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            transform: translateY(-50%);
+        }
+        .sliderwrapper .slide-button:hover{
+            background: white;
+        }
+
+        .sliderwrapper .slide-button#prev-slide{
+            margin-top:250px;
+            z-index: 2;
+            left:-100px;
+        }
+        .sliderwrapper .slide-button#next-slide{
+            right: -100px;
+            margin-top:-270px;
+        }
+
             .products {
                 max-width: 1200px; /* Set maximum width for the products container */
                 margin: 0 auto; /* Center the products container */
@@ -24,27 +114,39 @@
             }          
     
             .product {
-                position: relative; /* Set the position of the product container to relative */
-                flex: 0 1 calc(20% - 10px); /* Each product takes up 20% of the row width with some spacing */
-                border: 1px solid #ccc; /* Add a border around the product */
-                padding: 10px; /* Add spacing inside the product */
-                margin: 10px; /* Add margin around each product */
-                text-align: center; /* Center align text */
+            position: relative; /* Set the position of the product container to relative */
+            width: 200px;
+            border: 1px solid #ccc; /* Add a border around the product */
+            padding: 10px; /* Add spacing inside the product */
+            margin: 10px; /* Add margin around each product */
+            text-align: center; /* Center align text */
+        }
+
+        .add-to-cart {
+            color: white; /* White text color */
+            background-color: #007bff; /* Blue color for the button */
+            padding: 5px 10px; /* Add padding */
+            border: none; /* Remove border */
+            cursor: pointer; /* Add pointer cursor on hover */
+        }
+
+        .product img {
+            width: 100%; /* Make the image fill the width of the product */
+            height:250px; /* Maintain aspect ratio */
+        }
+
+       .product h3{
+            margin-bottom: 120px;
+        }
         
-            }
-    
-            .add-to-cart {
-                color: white; /* White text color */
-                background-color: #007bff; /* Blue color for the button */
-                padding: 5px 10px; /* Add padding */
-                border: none; /* Remove border */
-                cursor: pointer; /* Add pointer cursor on hover */
-            }
-    
-            .product img {
-                width: 100%; /* Make the image fill the width of the product */
-                height:250px; /* Maintain aspect ratio */
-            }
+        .price-addtoCartbutton{
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: auto; /* Center the division horizontally */
+            text-align: center; /* Center align text */
+        }
         
             .bottom-kway{
                 position: absolute;
@@ -52,6 +154,7 @@
                 left:10px;
             }
         </style>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header id="theheader">
@@ -59,7 +162,7 @@
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
                 <a href="store.html">Stores</a>
-                <a href="#">Fashion</a>
+                <a href="Fashion.html">Fashion</a>
                 <a href="electronics.html">Electronics</a>
                 <a href="#">Home & Office</a>
                 <a href="outdoor.html" class="outdoor">Outdoor</a>
@@ -117,36 +220,91 @@
 
     <section class="products">
         <h2>Hiking and Trekking Equipment</h2>
-        <div class="product-row">
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
+        <div class="container">
+            <div class="sliderwrapper">
+                <button id="prev-slide" class="slide-button material-symbols-rounded"><</button>
+                <div class="product-row">
+                    <div class="product">
+                        <img src="first-aid.png" alt="Top 1">
+                        <h3>LifeSystems Trek First Aid Kit</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P599.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="cape-union-tents.png" alt="Top 1">
+                        <h3>Cape Union Pop-Up 3 Person Tent</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P699.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="expedition-trekking-poles.png" alt="Top 1">
+                        <h3>K-Way Expedition Series Kilimanjaro Trekking Poles</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P899.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="kwilt.png" alt="Top 1">
+                        <h3>K-Way Multi-Kwilt Backpacking Down Quilt</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P2299.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="lawnchair.png" alt="Top 1">
+                        <h3>Cape Union Lawn Chair</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P399.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="kway-waterbottle.png" alt="Top 1">
+                        <h3>K-Way GI 1L WaterBottle</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P199.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="biltong-chopper.png" alt="Top 1">
+                        <h3>Kaliber Bamboo Biltong Slicer</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P699.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="maple-cookset.png" alt="Top 1">
+                        <h3>Fire Maple Fire Fanatic 2 Pot Cookset</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P449.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="nrit-gloves.png" alt="Top 1">
+                        <h3>N-Rit BBQ Gloves</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P299.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button id="next-slide" class="slide-button material-symbols-rounded">></button>
             </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb">
+                    </div>
+                </div>
             </div>
         </div>
         <hr> 
@@ -166,39 +324,77 @@
 
     <section class="products">
         <h2>Outdoor Accessories</h2>
-        <div class="product-row">
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
+        <div class="container">
+            <div class="sliderwrapper">
+                <button id="prev-slide" class="slide-button material-symbols-rounded"><</button>
+                <div class="product-row">
+                    <div class="product">
+                        <img src="mosquito-repellant.png" alt="Top 1">
+                        <h3>LifeTrek Kids Mosquito Repellant Band</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P179.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="kway-compass.png" alt="Top 1">
+                        <h3>K-Way Path Finder Compass</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P99.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="intex-pump.png" alt="Top 1">
+                        <h3>Intex 220V Electric Pump</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P449.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="intex-handpump.png " alt="Top 1">
+                        <h3>Intex Large Hand Pump</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P199.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="kway-fleece-blanket.png" alt="Top 1">
+                        <h3>K-Way Eco Fleece Blanket</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P499.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="four-straws.png" alt="Top 1">
+                        <h3>Ecovessel Four-Pack Stainless Steel Straw Set</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P199.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="blowtorch.png" alt="Top 1">
+                        <h3>Zengaz Maxi Blowtorch</h3>
+                        <div class="price-addtoCartbutton">
+                            <p>P179.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button id="next-slide" class="slide-button material-symbols-rounded">></button>
             </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb">
+                    </div>
+                </div>
             </div>
         </div>
-        <hr> 
     </section>
 
     <footer class="navbar">
