@@ -21,7 +21,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             <div class="dropdown-content">
                 <a href="store.html">Stores</a>
                 <a href="fashion.html">Fashion</a>
-                <a href="#">Electronics</a>
+                <a href="electronics.html">Electronics</a>
                 <a href="#">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
             </div>
