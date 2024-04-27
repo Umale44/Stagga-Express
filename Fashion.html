@@ -8,59 +8,138 @@
     <link rel="stylesheet" href="./stagga-style.css">
     <link rel="icon" href="staggalogosmall.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
-    <style>
-        .outdoor{
-            background-color: gray;
-            color: black;
-        }
+    <style>  
         .products {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 1200px; /* Set maximum width for the products container */
+            margin: 0 auto; /* Center the products container */
+            padding: 20px; /* Add some spacing around the products */
             color: white;
         }
 
-        .product-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
+        .container{
+            max-width: 1500px;
+            width:100%
+        }
+        
+
+       .product-row {
+             display: flex; /* Use flexbox for the product row */
+            margin-bottom: 20px; /* Add some space between rows */
+            overflow: hidden; /* Hide overflow to create the sliding effect */
         }          
+        .sliderwrapper .product-row {
+            display: grid; /* Use flexbox for the product row */
+            margin-bottom: 20px; /* Add some space between rows */
+            scrollbar-width: none;
+            grid-template-columns: repeat(99, 1fr);
+            overflow-x: auto; /* Hide overflow to create the sliding effect */
+        } 
+     
+        .sliderwrapper .product-row::-webkit-scrollbar{
+            display: none;
+        }
+
+        .container .slider-scrollbar{
+            height: 24px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .slider-scrollbar .scrollbar-track{
+            height: 2px;
+            width: 100%;
+            background: rgb(47, 46, 46);
+            position: relative;
+            border-radius: 4px;
+        }
+        .slider-scrollbar:hover .scrollbar-track{
+            height: 4px;
+        }
+        .slider-scrollbar .scrollbar-thumb{
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            background: #ccc;
+            border-radius: inherit;
+            cursor: grab;
+        }
+        .slider-scrollbar .scrollbar-thumb:active{
+            cursor: grabbing;
+            height: 8px;
+            top:-2px;
+        }
+        .slider-scrollbar .scrollbar-thumb::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -10px;
+            bottom: -10px;
+        }
+        .sliderwrapper{
+            position: relative;
+        }
+        .sliderwrapper .slide-button{
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            color: black; 
+            background: #ccc;
+            font-size: 2.2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            transform: translateY(-50%);
+        }
+        .sliderwrapper .slide-button:hover{
+            background: white;
+        }
+
+        .sliderwrapper .slide-button#prev-slide{
+            margin-top:250px;
+            z-index: 2;
+            left:-100px;
+        }
+        .sliderwrapper .slide-button#next-slide{
+            right: -100px;
+            margin-top:-270px;
+        }
 
         .product {
-            position: relative;
-            flex: 0 1 calc(20% - 10px);
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
+            position: relative; /* Set the position of the product container to relative */
+            width: 200px;
+            border: 1px solid #ccc; /* Add a border around the product */
+            padding: 10px; /* Add spacing inside the product */
+            margin: 10px; /* Add margin around each product */
+            text-align: center; /* Center align text */
         }
 
         .add-to-cart {
-            color: white;
-            background-color: #007bff;
-            padding: 5px 10px;
-            border: none;
-            cursor: pointer;
+            color: white; /* White text color */
+            background-color: #007bff; /* Blue color for the button */
+            padding: 5px 10px; /* Add padding */
+            border: none; /* Remove border */
+            cursor: pointer; /* Add pointer cursor on hover */
         }
 
         .product img {
-            width: 100%;
-            height: 250px;
+            width: 100%; /* Make the image fill the width of the product */
+            height:250px; /* Maintain aspect ratio */
         }
 
-        .slider-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.slider {
-    width: 30%; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
-    background-color: #ccc; /* Adjust the background color as needed */
-    border: 1px solid #000; /* Add border style as needed */
-}
-
+       .product h3{
+            margin-bottom: 120px;
+        }
+        
+        .price-addtoCartbutton{
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: auto; /* Center the division horizontally */
+            text-align: center; /* Center align text */
+        }
 
 
     </style>
@@ -71,10 +150,10 @@
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
                 <a href="store.html" class="stores">Stores</a>
-                <a href="#" class="outdoor">Fashion</a>
-                <a href="#">Electronics</a>
+                <a href="./Fashion.html">Fashion</a>
+                <a href="./electronics.html">Electronics</a>
                 <a href="#">Home & Office</a>
-                <a href="outdoor.html">Outdoor</a>
+                <a href="./outdoor.html">Outdoor</a>
             </div>
         </div>
         
@@ -138,17 +217,20 @@
             <!-- Add women's tops products here -->
             <div class="product">
                 <img src="./Foschini top.webp" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <p>MR Price</p>
+                <h3>Y&G Stripe Knit Co-Ord Long Sleeve Top
+                </h3>
+                <div class="price-addtoCartbutton">
+                <p>P359.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            
+            </div>
             <div class="product">
-                <img src="./Foshini top 2.webp" alt="Top 2">
-                <h3>Rib Vest</h3>
+                <img src="./Foschini top 2.jpg" alt="Top 2">
+                <h3>Scuba Shoulder Pad Top
+                </h3>
                 <div class="price-addtoCartbutton">
-                    <p>P799.00</p>
+                    <p>P429.00
+                    </p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
@@ -168,66 +250,73 @@
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
-              
+            <div class="product">
+                <img src="./Foschini top 5.webp" alt="Top 1">
+                <h3>Chicago Collegiate T-Shirt
+                </h3>
+                <div class="price-addtoCartbutton">
+                    <p>P199.00
+                    </p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
            
             <!-- Add more women's tops products here -->
         </div>
-        <a href="./markham.html" class="custom-btn"><button>For More</button></a>
+        <a href="./foschini.html" class="custom-btn"><button>For More</button></a>
 
     </div>
     <hr> 
     <div class="product-subsection">
-        <h3>Dress</h3>
+        <h2>Jackets</h2>
         <div class="product-row">
-            <!-- Add women's pants products here -->
             <div class="product">
-                <img src="./Foschini Dress 1.webp" alt="Dress 1">
-                <h3>Y&G Rib Bardot Maxi Dress</h3>
-                <p>*Price*</p>
-                <p>MR Price</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="./Foschini top.webp" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <p>MR Price</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="./Foschini Dress 2.webp" alt="Dress 2">
-                <h3>Sissy Boy Velvet Maxi Wrap Dress
-                    </h3>
+                <img src="Foschini jacket 1.webp" alt="Foschini jacket 1">
+                <h3>Melton Kimono Sleeve Coat</h3>
                 <div class="price-addtoCartbutton">
-                    <p>R 1 499,00
-                    </p>
+                    <p>P999.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
-                <img src="./Foschini Dress 3.webp" alt="Pants 3">
-                <h3>Sissy Boy Cold Shoulder Long Sleeve Mini Dress
-
-                    </h3>
+                <img src="Foschini jacket 2.webp" alt="Foschini jacket 2">
+                <h3>Cropped Shacket</h3>
                 <div class="price-addtoCartbutton">
-                    <p>R 1 599,00
-                    </p>
+                    <p>P699.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
-                <img src="./Foschini Dress 4.webp" alt="Dress 4">
-                <h3>Mesh Draped Waist Long Sleeve Highneck Column Dress
-                    </h3>
+                <img src="Foschini jacket 3.webp" alt="Foschini jacket 3">
+                <h3>Lined Calf Length Coat</h3>
                 <div class="price-addtoCartbutton">
-                    <p>P799.00</p>
+                    <p>P1 099.00</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
-            <!-- Add more women's pants products here -->
+            <div class="product">
+                <img src="Foschini jacket 4.webp" alt="Foschini jacket 4">
+                <h3>Aviator Shearling Lined Pleather Trench Coat</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P1 899.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <br>
+            <div class="product">
+                <img src="Foschini jacket 5.webp" alt="Foschini jacket 5">
+                <h3>Slim Fit Two Button Blazer</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P759.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <hr> 
+        <a href="./foschini.html" class="custom-btn"><button>Foschini</button></a>
+
+        <hr>
+           
+       
     <div class="product-subsection">
         <h3>Pants</h3>
         <div class="product-row">
@@ -266,141 +355,381 @@
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
+            <div class="product">
+                <img src="./pants5.webp" alt="Pants 5">
+                <h3>Slim Leg Bengaline Pants
+                    </h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
             <!-- Add more women's pants products here -->
         </div>
     </div>
+    <a href="./foschini.html" class="custom-btn"><button>Foschini</button></a>
 
 
     <hr>
-    <div class="product-subsection">
-        <h3>Accessories</h3>
-        <div class="product-row">
-            <!-- Add women's jewelry products here -->
-            <div class="product">
-                <img src="./Jewellery item 1 foschini.webp" alt="Jewelry 1">
-                <h3>Yellow Gold 0.5ct Lab Grown Diamond Heart Pendant
-                </h3>
-                <p>R 9 999,00
-                </p>
-                <p>Necklace</p>
+    <h2>Jewellery</h2>
+    <div class="product-row">
+        <div class="product">
+            <img src="Jewellery item 1 foschini.jpg" alt="Foschini jewellery 1">
+            <h3>Tripple Layer Fine Chain Necklace</h3>
+            <div class="price-addtoCartbutton">
+                <p>P119.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product">
-                <img src="./Jewellery item 2 foschini.jpg" alt="Jewelry 2">
-                <h3>Yellow Gold 0.5ct Lab Grown Diamond Heart Pendant
-                </h3>
-                <p>R 2 799,00
-
-                </p>
-                <p>Earings</p>
+        </div>
+        <div class="product">
+            <img src="Jewellery item 2 foschini.jpg" alt="Foschini jewellery 2">
+            <h3>Glam Diamante Stud Earrings</h3>
+            <div class="price-addtoCartbutton">
+                <p>P119.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product">
-                <img src="./Jewellery item 5 foschini.webp" alt="Jewelry 3">
-                <h3>Michael Kors Runway Gold Plated Stainless Steel Curb Bracelet Watch
-                    Michael Kors
-
-                </h3>
-                <p>R 4 999,00
-
-                </p>
-                <p>Watch</p>
+        </div>
+        <div class="product">
+            <img src="Jewellery item 3 foschini.webp" alt="Foschini jewellery 3">
+            <h3>Skinny Wrap Around Sunglasses</h3>
+            <div class="price-addtoCartbutton">
+                <p>P99.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product">
-                <img src="./Jewellery item 3 foschini.webp" alt="Jewelry 3">
-                <h3>Michael Kors Sage Rose Plated Stainless Steel Bracelet Watch
-
-                </h3>
-                <p>R 2 799,00
-                </p>
-                <p>Watch</p>
+        </div>
+        <div class="product">
+            <img src="Jewellery item 4 foschini.webp" alt="Foschini jewellery 4">
+            <h3>3 Pack Beaded Stretchie Bracelet</h3>
+            <div class="price-addtoCartbutton">
+                <p>P109.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product">
-                <img src="./Jewellery item 4 foschini.jpg" alt="Jewelry 4">
-                <h3>Yellow Gold Figaro Bracelet
-
-
-                </h3>
-                <p>R 4 999,00
-
-                </p>
-                <p>Watch</p>
+        </div>
+        <div class="product">
+            <img src="Jewellery item 5 foschini.webp" alt="Foschini jewellery 5">
+            <h3>Luella Diamante Catseye Sunglasses</h3>
+            <div class="price-addtoCartbutton">
+                <p>P359.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <!-- Add more women's jewelry products here -->
         </div>
     </div>
+</div>
 </section>
+<a href="./foschini.html" class="custom-btn"><button>Foschini</button></a>
 
 <section class="products men-clothing">
     <h2>Men's Clothing</h2>
-    <div class="product-subsection">
-        <h3>Tops</h3>
-        <div class="product-row">
-            <!-- Add men's tops products here -->
+    <h3>Tops</h3>
+
+   <div class="product-row">
+            <!-- Add MANS tops products here -->
             <div class="product">
-                <img src="#" alt="Top 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <p>MR Price</p>
+                <img src="./top1.webp" alt="Top 1">
+                <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt
+                </h3>
+                <P></P>
+                <p>P799.00 </p>
+              
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <!-- Add more men's tops products here -->
-        </div>
-    </div>
+            <div class="product">
+                <img src="./top2.webp" alt="Top 2">
+                <h3>G-Star Men's Slim Base RT Blue T-Shirt
+                </h3>
+                <P></P>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./top3.webp" alt="Top 3">
+                <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt
+                </h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./top4.webp" alt="Top 1">
+                <h3>Men's Relay Jeans Outline Signature Navy Graphic T-Shirt
+                </h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./top5.webp" alt="Top 1">
+                <h3>Men's Relay Jeans Outline Signature Navy Graphic T-Shirt
+                </h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+              
+                   </div>
+                
+                </div>
+                <a href="./markham.html" class="custom-btn"><button>For More</button></a>
+
+
     <hr> 
     <div class="product-subsection">
         <h3>Pants</h3>
         <div class="product-row">
-            <!-- Add men's pants products here -->
             <div class="product">
-                <img src="#" alt="Pants 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <p>MR Price</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <img src="pants2.webp" alt="Men's Markham Core Knit Mocha Jogger">
+                <h3>Men's Markham Core Knit Mocha Jogger</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P399.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
-            <!-- Add more men's pants products here -->
+            <div class="product">
+                <img src="pants3.webp" alt="Men's Relay Jeans Utility Stone Cargo Pants">
+                <h3>Men's Relay Jeans Utility Stone Cargo Pants</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P899.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="pants4.webp" alt="Men's Markham Multi Fabric Natural Utility Pants">
+                <h3>Men's Markham Multi Fabric Natural Utility Pants</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P699.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="pants1.webp" alt="Men's Union-DNM Light Grey Cargo Pants">
+                <h3>Men's Union-DNM Light Grey Cargo Pants</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P1,119.20</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="pants5.webp" alt="Men's Markham Smart Slim Tapered Flannel Grey Trouser">
+                <h3>Men's Markham Smart Slim Tapered Flannel Grey Trouser</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P699.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
         </div>
-    </div>
+        <a href="./markham.html" class="custom-btn"><button>Markham</button></a>
+
     <hr> 
-    <div class="product-subsection">
-        <h3>Accessories</h3>
+    <h2>Jackets</h2>
         <div class="product-row">
-            <!-- Add men's accessories products here -->
             <div class="product">
-                <img src="#" alt="Accessories 1">
-                <h3>*Product description*</h3>
-                <p>*Price*</p>
-                <p>MR Price</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <img src="jacket1.webp" alt="Men's Markham Core Knit Mocha Jogger">
+                <h3>Men's Relay Jeans Black Gilet</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
-            <!-- Add more men's accessories products here -->
+            <div class="product">
+                <img src="jacket2.webp" alt="Men's Relay Jeans Utility Stone Cargo Pants">
+                <h3>Men's Relay Jeans Hooded Grey Puffer Jacket</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P999.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="jacket3.webp" alt="Men's Relay Jeans Hooded Black Puffer Jacket">
+                <h3>Men's Relay Jeans Hooded Black Puffer Jacket</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P999.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="jacket4.webp" alt="Men's Union-DNM Light Grey Cargo Pants">
+                <h3>Men's Markham Borg Utility Fatigue Sherpa Shacket</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="jacket5.webp" alt="Men's Markham Functional Black Jacket">
+                <h3>Men's Markham Functional Black Jacket</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P799.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <a href="./markham.html" class="custom-btn"><button>Markham</button></a>
+
+        <hr>
+    <div class="product-subsection">
+        <h2>Shoes</h2>
+        <div class="product-row">
+            <div class="product">
+                <img src="shoe1.webp" alt="Men's Jonathan D Landon Camel Derby Shoe">
+                <h3>Men's Jonathan D Landon Camel Derby Shoe</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P1,099.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="shoe2.webp" alt="Men's Relay Jeans Leather Suede Black Court">
+                <h3>Men's Relay Jeans Leather Suede Black Court</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P1,399.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="shoe3.webp" alt="G-Star Men's Noxer Nub Black Boot">
+                <h3>G-Star Men's Noxer Nub Black Boot</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P3,499.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="shoe4.webp" alt="Men's Markham Premium Lace Up Tan Boot">
+                <h3>Men's Markham Premium Lace Up Tan Boot</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P1,499.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="shoe5.webp" alt="Men's Jonathan D Penny Moc Burgundy Loafer">
+                <h3>Men's Jonathan D Penny Moc Burgundy Loafer</h3>
+                <div class="price-addtoCartbutton">
+                    <p>P999.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
         </div>
     </div>
+    <a href="./markham.html" class="custom-btn"><button>Markham</button></a>
+
+    <br>
+    
 </section>
 <section class="products kids-clothing">
-    <h2>Kids' Clothing</h2>
+    <h2>Kids(1-7)</h2>
+    <br>
+    <h2>Girls Clothing</h2>
     <div class="product-row">
-        <!-- Add kids' clothing products here -->
+        <!-- Replace '#' with the actual image paths -->
         <div class="product">
-            <img src="#" alt="Top 1">
-            <h3>*Product description*</h3>
-            <p>*Price*</p>
-            <p>Kids' Brand</p>
-            <button class="add-to-cart">Add to Cart</button>
+            <img src="./Girls Dress 2.webp" alt="Girls Dress 2">
+            <h3>Fit And Flare Dress
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P129.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
         </div>
-        <!-- Add more kids' clothing products here -->
+        <div class="product">
+            <img src="./Mr Price Top 5.avif" alt="Girls Dress">
+            <h3>Seamless T-Shirt
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P179.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Mr Price Girls Jacket 1.webp" alt="Girls Dress">
+            <h3>Active Hoodie
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P129.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Mr Price 7-14 girls jacket 2.webp" alt="Girls Dress">
+            <h3>Hooded Puffer Jacket
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P279.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Girls Dress 5.webp" alt="Girls Dress">
+            <h3>Trapeze Dress
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P80.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Add more product divs as needed -->
     </div>
-    <hr> 
-    <!-- Add more subsections for kids' clothing if needed -->
-</section>
-<section class="slider-container">
-    <div class="slider"></div>
-    <div class="slider"></div>
-    <div class="slider"></div>
+    <a href="./MrPrice.html" class="custom-btn"><button>For More</button></a>
+<HR></HR>
+    <h2>Boys Clothing</h2>
+    <div class="product-row">
+        <!-- Replace '#' with the actual image paths -->
+        <div class="product">
+            <img src="./Boys Outfit 1.webp" alt="Girls Dress 2">
+            <h3>Active Set(Burgundy)
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P179.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Mr Price boys top 2.avif" alt="Girls Dress">
+            <h3>Oversized T-Shirt
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P159.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Mr Price boys Top 4.webp" alt="boys top">
+            <h3>Graphic T-Shirt
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P139.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Mr Price boys  jacket.webp" alt="Girls Jacket">
+            <h3>Bomber Jacket
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P135.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./Boys Outfit 4.webp" alt="Boys Outfit">
+            <h3>Active Set
+            </h3>
+            <div class="price-addtoCartbutton">
+                <p>P139.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>        <!-- Add more product divs as needed -->
+    </div>
+    <a href="./MrPrice.html" class="custom-btn"><button>Mr Price</button></a>
+
+    <br>
 </section>
 
 <footer class="navbar">
