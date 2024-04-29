@@ -1,14 +1,16 @@
 <?php
     include 'User.php';
     class Customer extends User {
+        private $customerID;
         private $firstname;
         private $lastname;
         private $address;
         private $emailAddress;
         private $age;
     
-        public function __construct($username, $password, $firstname, $lastname, $address, $emailAddress, $age) {
+        public function __construct($username, $password, $customerID, $firstname, $lastname, $address, $emailAddress, $age) {
             parent::__construct($username, $password, 'customer');
+            $this->customerID = $customerID;
             $this->firstname = $firstname;
             $this->lastname = $lastname;
             $this->address = $address;
@@ -17,6 +19,14 @@
         }
     
         // Getters and setters for the additional attributes
+        public function getCustomerID() {
+            return $this->CustomerID;
+        }
+    
+        public function setCustomerID($customerID) {
+            $this->customerID = $customerID;
+        }
+
         public function getFirstname() {
             return $this->firstname;
         }
@@ -57,7 +67,9 @@
             $this->age = $age;
         }
         public function __toString() {
-            return "Username: " . $this->getUsername() . "<br>" .
+            return 
+                   "CustomerID: " . $this->customerID . "<br>" .
+                   "Username: " . $this->getUsername() . "<br>" .
                    "Name: " . $this->firstname . "<br>" .
                    "Surname: " . $this->lastname . "<br>" .
                    "Address: " . $this->address . "<br>" .

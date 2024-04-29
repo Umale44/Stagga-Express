@@ -132,3 +132,35 @@ function openLoginScreen() {
 function closeLoginScreen() {
     document.getElementById('loginPopup').style.display = 'none';
 }
+
+/*FUNCTION TO ADD TO CART*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all add-to-cart buttons
+    var addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var productId = button.getAttribute('data-product-id');
+            console.log('Product ID:', productId); // Log the productId to the console
+
+            // Send a request to the server to add the product to the cart
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '../includes/addtocart.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Product added successfully
+                        alert('Product added to cart');
+                    } else {
+                        // Error adding product to cart
+                        alert('Error adding product to cart');
+                    }
+                }
+            };
+            xhr.send('productId=' + productId);
+        });
+    });
+});
+

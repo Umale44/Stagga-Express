@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $customer = new Customer(
                     $customerData['username'],
                     "",
+                    $customerData['customerID'],
                     $customerData['firstname'],
                     $customerData['surname'],
                     $customerData['address'],
@@ -45,6 +46,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: customer-acc/home.php");
                 exit();
             } elseif ($user['usertype'] === 'business') {
+                // Include Customer class file
+                require_once "includes/Seller.php";
+                
+                // Fetch customer data
+                $queryBusiness = "SELECT * FROM store WHERE username = :username";
+                $stmtBusiness = $pdo->prepare($queryBusiness);
+                $stmtBusiness->execute(array(':username' => $username));
+                $businessData = $stmtBusiness->fetch(PDO::FETCH_ASSOC);
+
+                // Create Customer object
+                $seller = new Seller(
+                    $businessData['username'],
+                    ""
+                );
+
+                // Store Customer object in session
+                $_SESSION['store'] = $seller;
+
+                // Redirect to customer-acc/home.php
                 header("Location: business-acc/home.php");
                 exit();
             } elseif ($user['usertype'] === 'administrator') {
@@ -66,12 +86,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-
-
-<style>
-    
-</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>

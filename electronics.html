@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stagga Express | The Home of express delivery</title>
     <link rel="stylesheet" href="stagga-style.css">
-    <link rel="stylesheet" href="outdoor.css">
+    <link rel="stylesheet" href="electronics.css">
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
@@ -19,18 +19,17 @@
     
             .product-row {
                 display: flex; /* Use flexbox for the product row */
-                justify-content: space-between; /* Distribute products evenly across the row */
                 margin-bottom: 20px; /* Add some space between rows */
-            }          
+                overflow: hidden; /* Hide overflow to create the sliding effect */
+            }         
     
             .product {
                 position: relative; /* Set the position of the product container to relative */
-                flex: 0 1 calc(20% - 10px); /* Each product takes up 20% of the row width with some spacing */
+                width: 200px;
                 border: 1px solid #ccc; /* Add a border around the product */
                 padding: 10px; /* Add spacing inside the product */
                 margin: 10px; /* Add margin around each product */
                 text-align: center; /* Center align text */
-        
             }
     
             .add-to-cart {
@@ -43,7 +42,10 @@
     
             .product img {
                 width: 100%; /* Make the image fill the width of the product */
-                height:200px; /* Maintain aspect ratio */
+                height:250px; /* Maintain aspect ratio */
+            }
+            .product h3{
+                margin-bottom: 120px;
             }
         
             .bottom-kway{
@@ -58,9 +60,9 @@
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
-                <a href="store.html">Stores</a>
-                <a href="Fashion.html">Fashion</a>
-                <a href="electronics.html" class="outdoor">Electronics</a>
+                <a href="store.html" class="stores">Stores</a>
+                <a href="Fashion.html" class="fashion">Fashion</a>
+                <a href="electronics.html" class="electronics">Electronics</a>
                 <a href="#">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
             </div>
@@ -121,32 +123,42 @@
             <div class="product">
                 <img src="watch 6.webp" alt="Top 1">
                 <h3>Samsung Galaxy Watch 6 40mm Black</h3>
-                <p>P4 599 from P7 499</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <div class="price-addtoCartbutton">
+                    <p>P4 599 from P7 499</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
             <div class="product">
                 <img src="hisense.webp" alt="Top 1">
                 <h3>Hisense 65-inch Smart UHD TV 65A6K</h3>
-                <p>P8 999 from P11 999</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <div class="price-addtoCartbutton">
+                    <p>P8 999 from P11 999</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
             <div class="product">
                 <img src="macbook.webp" alt="Top 1">
                 <h3>Apple MacBook Air 13-Inch With M1 Processor 7 Core GPU 256GB Space Grey</h3>
-                <p>P15 999 from P18 999</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <div class="price-addtoCartbutton">
+                    <p>P15 999 from P18 999</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
             <div class="product">
                 <img src="asus rog.webp" alt="Top 1">
                 <h3>Asus Rog Ally Z1 Extreme - Handheld Console</h3>
-                <p>P12 999 from P15 999</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <div class="price-addtoCartbutton">
+                    <p>P12 999 from P15 999</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
             <div class="product">
                 <img src="iphone.webp" alt="Top 1">
                 <h3>Apple iPhone 15 Pro 512GB Black Titanium</h3>
-                <p>P31 999 from P34 199</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <div class="price-addtoCartbutton">
+                    <p>P31 999 from P34 199</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
         </div>
         <hr> 
