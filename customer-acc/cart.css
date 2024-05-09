@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000000;
 }
 
 .cart-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -25,8 +25,7 @@ body {
 }
 
 .cart-item img {
-    width: 100px;
-    height: 100px;
+    height: 250px;
     object-fit: cover;
     margin-right: 20px;
 }

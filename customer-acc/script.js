@@ -133,7 +133,7 @@ function closeLoginScreen() {
     document.getElementById('loginPopup').style.display = 'none';
 }
 
-/*FUNCTION TO ADD TO CART*/
+/*FUNCTION TO ADD TO CART
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get all add-to-cart buttons
@@ -142,7 +142,14 @@ document.addEventListener('DOMContentLoaded', function() {
     addToCartButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             var productId = button.getAttribute('data-product-id');
-            console.log('Product ID:', productId); // Log the productId to the console
+            var productImage = button.closest('.product').querySelector('img').src;
+            var productName = button.closest('.product').querySelector('h3').textContent;
+            var productPrice = button.closest('.product').querySelector('.price-addtoCartbutton p').textContent.replace('P', ''); // Assuming the price is in the format "P399.00"
+
+            console.log('Product ID:', productId);
+            console.log('Product Image:', productImage);
+            console.log('Product Name:', productName);
+            console.log('Product Price:', productPrice);
 
             // Send a request to the server to add the product to the cart
             var xhr = new XMLHttpRequest();
@@ -159,8 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             };
-            xhr.send('productId=' + productId);
+            xhr.send('productId=' + productId + '&productImage=' + productImage + '&productName=' + productName + '&productPrice=' + productPrice);
         });
     });
 });
+*/
+
+
 

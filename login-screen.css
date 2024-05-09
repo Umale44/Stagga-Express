@@ -53,11 +53,12 @@ body {
 }
 
 .main-container .form-container .input-field input[type="text"],
-.main-container .form-container .input-field input[type="password"] {
+.main-container .form-container .input-field input[type="password"],
+.main-container .form-container .input-field input[type="number"] {
     margin-top: 15px;
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 5px;
     outline: none;
     border: 1px solid #aaa;
     border-radius: 5px;

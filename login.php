@@ -40,7 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 );
 
                 // Store Customer object in session
-                $_SESSION['customer'] = $customer;
+                // Serialize the Customer object
+                $serializedCustomer = serialize($customer);
+
+                // Store the serialized Customer object in the session
+                $_SESSION['customer'] = $serializedCustomer;
+
 
                 // Redirect to customer-acc/home.php
                 header("Location: customer-acc/home.php");
@@ -58,11 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Create Customer object
                 $seller = new Seller(
                     $businessData['username'],
-                    ""
+                    "",
+                    $businessData['storeID']
                 );
 
-                // Store Customer object in session
-                $_SESSION['store'] = $seller;
+                $serializedSeller = serialize($seller);
+
+                // Store the serialized Seller object in the session
+                $_SESSION['store'] = $serializedSeller;
 
                 // Redirect to customer-acc/home.php
                 header("Location: business-acc/home.php");

@@ -1,3 +1,6 @@
+<?php
+    include '../includes/connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,6 +150,19 @@
             margin: auto; /* Center the division horizontally */
             text-align: center; /* Center align text */
         }
+        .quantity-selector select{
+            color:black;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1px;
+            width: 50px; /* Adjust the width as needed */
+            margin-bottom:15px;
+        }
+        option{
+            background-color:white;
+            color:black;
+        }
 
 
     </style>
@@ -166,7 +182,7 @@
         </div>
         
         <div id="staggamainlogo">
-            <a href="index.php"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
+            <a href="home.php"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
         </div>
 
         <div id="searchbar">
@@ -199,7 +215,24 @@
                         <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
                         <div class="price-addtoCartbutton">
                             <p>P799.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
+                            <form action="../includes/addtocart.php" method="post">
+                                <input type="hidden" name="productId" value="6">
+                                <input type="hidden" name="productImage" value="top1.webp">
+                                <input type="hidden" name="productName" value="G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt">
+                                <input type="hidden" name="productPrice" value="799.00">
+                                <div class="quantity-selector">
+                                    <!--<label for="quantity">Quantity:</label>-->
+                                    <select id="quantity" name="quantity">
+                                        <?php
+                                            // Generate options for quantity, starting from 1
+                                            for ($i = 1; $i <= 20; $i++) {
+                                                echo "<option value='$i'>$i</option>";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                                <button type="submit" class="add-to-cart">Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                     <div class="product">
@@ -207,7 +240,24 @@
                         <h3>G-Star Men's Slim Base RT Blue T-Shirt</h3>
                         <div class="price-addtoCartbutton">
                             <p>P699.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
+                            <form action="../includes/addtocart.php" method="post">
+                                <input type="hidden" name="productId" value="8">
+                                <input type="hidden" name="productImage" value="top2.webp">
+                                <input type="hidden" name="productName" value="G-Star Men's Slim Base RT Blue T-Shirt">
+                                <input type="hidden" name="productPrice" value="699.00">
+                                <div class="quantity-selector">
+                                    <!--<label for="quantity">Quantity:</label>-->
+                                    <select id="quantity" name="quantity">
+                                        <?php
+                                            // Generate options for quantity, starting from 1
+                                            for ($i = 1; $i <= 20; $i++) {
+                                                echo "<option value='$i'>$i</option>";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                                <button type="submit" class="add-to-cart">Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                     <div class="product">
@@ -215,7 +265,24 @@
                         <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt</h3>
                         <div class="price-addtoCartbutton">
                             <p>P159.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
+                            <form action="../includes/addtocart.php" method="post">
+                                <input type="hidden" name="productId" value="8">
+                                <input type="hidden" name="productImage" value="top3.webp">
+                                <input type="hidden" name="productName" value="Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt">
+                                <input type="hidden" name="productPrice" value="159.00">
+                                <div class="quantity-selector">
+                                    <!--<label for="quantity">Quantity:</label>-->
+                                    <select id="quantity" name="quantity">
+                                        <?php
+                                            // Generate options for quantity, starting from 1
+                                            for ($i = 1; $i <= 20; $i++) {
+                                                echo "<option value='$i'>$i</option>";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                                <button type="submit" class="add-to-cart">Add to Cart</button>
+                            </form>  
                         </div>
                     </div>
                     <div class="product">
@@ -303,20 +370,33 @@
         <hr> 
         <h2>Pants</h2>
         <div class="product-row">
-            <div class="product">
-                <img src="pants2.webp" alt="Men's Markham Core Knit Mocha Jogger">
-                <h3>Men's Markham Core Knit Mocha Jogger</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P399.00</p>
-                    <button class="add-to-cart" data-product-id="2">Add to Cart</button>
-                </div>
-            </div>
+        <div class="product">
+            <img src="pants2.webp" alt="Men's Markham Core Knit Mocha Jogger">
+        <h3>Men's Markham Core Knit Mocha Jogger</h3>
+    <div class="price-addtoCartbutton">
+        <p>P399.00</p>
+        <form action="../includes/addtocart.php" method="post">
+            <input type="hidden" name="productId" value="4">
+            <input type="hidden" name="productImage" value="pants2.webp">
+            <input type="hidden" name="productName" value="Men's Markham Core Knit Mocha Jogger">
+            <input type="hidden" name="productPrice" value="399.00">
+            <button type="submit" class="add-to-cart">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
             <div class="product">
                 <img src="pants3.webp" alt="Men's Relay Jeans Utility Stone Cargo Pants">
                 <h3>Men's Relay Jeans Utility Stone Cargo Pants</h3>
                 <div class="price-addtoCartbutton">
                     <p>P899.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <form action="../includes/addtocart.php" method="post">
+                        <input type="hidden" name="productId" value="5">
+                        <input type="hidden" name="productImage" value="pants3.webp">
+                        <input type="hidden" name="productName" value="Men's Relay Jeans Utility Stone Cargo Pants">
+                        <input type="hidden" name="productPrice" value="899.00">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
             </div>
             <div class="product">

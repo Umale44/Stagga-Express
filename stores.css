@@ -16,6 +16,7 @@ h1 {
     text-align: center;
     background:none;
 }
+
 .stores-background {
     position: relative;
     width: 100%;
@@ -87,3 +88,74 @@ h1 {
     filter: brightness(100%);
   }
 
+  @media (max-width: 434px) {
+    .stores-background {
+        position: relative;
+        width: 100%;
+        height: 800px;/* Set height to fill the viewport */
+        overflow: hidden;
+    }
+    
+    .stores-background img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+    
+    .stores-background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 800px; /* Set height to fill the viewport */
+        background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha (last value) to change the darkness */
+        z-index: 1;
+        
+    }
+    .store-container {
+        
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+    
+    .store-info {
+        color: white;
+        margin-right: 0px; 
+        margin-left: 0;
+    }
+    
+    .store-info img {
+        width: 100%; 
+        height: 40px;
+        border-radius: 12%; /* Makes the image edges round */
+        border: 2px solid white; /* Add a white border */
+        transition: filter 0.4s ease;
+        filter: brightness(50%);
+    }
+    
+    .store-info h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .store-details{
+        width: 75%; /* Specify a width */
+        margin: 0 auto;
+    }
+    .rating {
+        font-size: 16px;
+        color: #ffc107; /* Yellow color for rating */
+        margin-bottom: 5px;
+    }
+    .store-info p{
+        font-size: 14px;
+    }
+    .stores{
+        background-color: gray;
+        color: black;
+    }
+    .store-info img:hover {
+        filter: brightness(100%);
+      }
+  }

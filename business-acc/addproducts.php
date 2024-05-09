@@ -30,24 +30,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
                 
                 // Retrieve the storeID using the username
-                if (isset($_SESSION['store'])) {
-                    $seller = unserialize($_SESSION['store']);
-                    $sellerUsername = $seller->getUsername();
-                    // Now $sellerUsername contains the username of the logged-in Seller
-                } else {
-                    // Session variable not set, handle the case where the Seller is not logged in
-                }
-                $stmt = $pdo->prepare("SELECT storeID FROM Store WHERE username = ?");
-                $stmt->execute([$sellerUsername]);
-                $storeID = $stmt->fetchColumn();
+                if (isset($_SESSION['store']) && !empty($_SESSION['store'])) {
+                    $serializedSeller = $_SESSION['store'];
+                    $seller = unserialize($serializedSeller);
+                    $storeID = $seller->getStoreID();
 
-                // SQL query to insert the product into the database
-                $sql = "INSERT INTO Product (productName, price, image, productDetail, storeID) 
-                        VALUES (?, ?, ?, ?, ?)";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute([$productName, $price, $targetFile, $productDetail, $storeID]);
-                
-                echo "Product added successfully";
+                    // SQL query to insert the product into the database
+                    $sql = "INSERT INTO Product (productName, price, image, productDetail, storeID) 
+                            VALUES (?, ?, ?, ?, ?)";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([$productName, $price, $targetFile, $productDetail, $storeID]);
+                    
+                    echo "Product added successfully";
+                } else {
+                    echo "Session variable 'store' is not set or empty.";
+                }
             } else {
                 echo "Sorry, there was an error uploading your file.";
             }
@@ -55,8 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "File is not an image.";
     }
+} else {
+    echo "Invalid request method.";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

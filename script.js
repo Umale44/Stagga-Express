@@ -1,3 +1,5 @@
+console.log("JavaScript code executed");
+
 const initSlider = () => {
     const imageList = document.querySelector(".sliderwrapper .product-row");
     const slideButtons = document.querySelectorAll(".sliderwrapper .slide-button");
@@ -141,4 +143,58 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".popup").classList.add("active")
         alert('Login button clicked!');
     });
+});
+
+
+let buttons = document.querySelectorAll('#section2 .go-to-store');
+
+buttons.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        let containers = document.querySelectorAll('#section2 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'paused';
+        });
+    });
+
+    button.addEventListener('mouseout', function() {
+        let containers = document.querySelectorAll('#section2 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'running';
+        });
+    });
+});
+
+let buttons2 = document.querySelectorAll('#section3 .go-to-store');
+
+buttons2.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        let containers = document.querySelectorAll('#section3 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'paused';
+        });
+    });
+
+    button.addEventListener('mouseout', function() {
+        let containers = document.querySelectorAll('#section3 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'running';
+        });
+    });
+});
+
+
+
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+  let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop) {
+    // Scroll down
+    document.getElementById("theheader").style.top = "-100px"; // Adjust the value as needed
+  } else {
+    // Scroll up
+    document.getElementById("theheader").style.top = "0";
+  }
+  lastScrollTop = currentScroll;
 });

@@ -20,7 +20,7 @@
     
         // Getters and setters for the additional attributes
         public function getCustomerID() {
-            return $this->CustomerID;
+            return $this->customerID;
         }
     
         public function setCustomerID($customerID) {
