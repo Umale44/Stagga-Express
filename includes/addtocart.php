@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $customer = unserialize($serializedCustomer);
         $customerID = $customer->getCustomerID();
 
-        $productID = $_POST['productId'];
+        $productID = $_POST['productID'];
         $productImage = $_POST['productImage'];
         $productName = $_POST['productName'];
         $productPrice = $_POST['productPrice'];

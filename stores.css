@@ -158,4 +158,17 @@ h1 {
     .store-info img:hover {
         filter: brightness(100%);
       }
+      .quantity-selector select{
+        color:black;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 1px;
+        width: 50px; /* Adjust the width as needed */
+        margin-bottom:15px;
+    }
+    option{
+        background-color:white;
+        color:black;
+    }
   }

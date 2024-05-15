@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmtBusiness->execute(array(':username' => $username));
                 $businessData = $stmtBusiness->fetch(PDO::FETCH_ASSOC);
 
-                // Create Customer object
+                // Create Seller object
                 $seller = new Seller(
                     $businessData['username'],
                     "",
@@ -72,13 +72,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Store the serialized Seller object in the session
                 $_SESSION['store'] = $serializedSeller;
 
-                // Redirect to customer-acc/home.php
+                // Redirect to business-acc/home.php
                 header("Location: business-acc/home.php");
                 exit();
+                
             } elseif ($user['usertype'] === 'administrator') {
-                header("Location: admin-acc/home.php");
+                // Include Admin class file
+                require_once "includes/Admin.php";
+                
+                // Create Admin object
+                $admin = new Admin(
+                    $user['username'],
+                    ""
+                );
+            
+                $serializedAdmin = serialize($admin);
+            
+                // Store the serialized Admin object in the session
+                $_SESSION['admin'] = $serializedAdmin;
+            
+                // Redirect to admin dashboard
+                header("Location: admin-acc/admin_dashboard.php");
                 exit();
-            } else {
+            }
+             else {
                 // Handle other user types as needed
                 echo "Invalid user type.";
             }
@@ -103,8 +120,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
     <title>Stagga Express | The Home of express delivery | Log in to your account</title>
+    <style>
+        body img{
+            height:100px;
+            margin-left:47%;
+            margin-top:130px;
+        }
+    </style>
 </head>
 <body>
+    <a href="index.html"><img src="staggalogosmall.png" alt=""></a>
     <div class="main-container">
         <section class="form-container">
             <div class="title">
@@ -114,19 +139,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="" method="post">
                 <div class="input-field">
                     <p>Username</p>
-                    <input type="text" name="username" registered placeholder="username" maxlength="50">
+                    <input type="text" name="username" registered placeholder="username" maxlength="50" required>
                 </div>
 
                 <div class="input-field">
                     <p>Password</p>
-                    <input type="password" name="password" registered placeholder="password" maxlength="50"
-                    oninput="this.value = this.value.replace(/\s/g,'')">
+                    <input type="password" name="password" registered placeholder="password" maxlength="50" required>
                 </div>
                 <div class="input-field">
                     <input type="submit" name="submit" value="LOGIN" class="btn">
                 </div>
                 
-                <p>Dont have an account? <a href="signup.php">Register now</a></p>
+                <p>Dont have an account? <a href="signupcusorbus.html">Register now</a></p>
             </form>
         </section>
     </div>

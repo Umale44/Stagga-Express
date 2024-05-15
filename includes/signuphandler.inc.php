@@ -9,12 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $surname = $_POST["surname"];
     $age = $_POST["age"];
 
-    // Check if any field is empty
-    if (empty($username) || empty($password) || empty($emailAddress) || empty($address) || empty($firstname) || empty($surname) || empty($age)) {
-        echo '<script>alert("Please fill in all fields."); window.history.back();</script>';
-        exit(); // Prevent further execution
-    }
-
     try {
         require_once "connection.php";
 

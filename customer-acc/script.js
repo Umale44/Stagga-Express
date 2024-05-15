@@ -1,3 +1,5 @@
+console.log("JavaScript code executed");
+
 const initSlider = () => {
     const imageList = document.querySelector(".sliderwrapper .product-row");
     const slideButtons = document.querySelectorAll(".sliderwrapper .slide-button");
@@ -123,54 +125,76 @@ window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
 
 //login popup
-// Function to open login popup
-function openLoginScreen() {
-    document.getElementById('loginPopup').style.display = 'block';
-}
+/* Function to open login popup
+/*document.querySelector("#login").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
 
-// Function to close login popup
-function closeLoginScreen() {
-    document.getElementById('loginPopup').style.display = 'none';
-}
+document.querySelector(".popup .close").addEventListener("click",function(){
+    document.querySelector(".popup").classList.remove("active");
+});*/
 
-/*FUNCTION TO ADD TO CART
+document.addEventListener("DOMContentLoaded", function() {
+    // Get login button
+    const loginButton = document.querySelector('#login');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all add-to-cart buttons
-    var addToCartButtons = document.querySelectorAll('.add-to-cart');
+    // Add click event listener
+    loginButton.addEventListener('click', function() {
+        document.querySelector(".popup").classList.add("active")
+        alert('Login button clicked!');
+    });
+});
 
-    addToCartButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var productId = button.getAttribute('data-product-id');
-            var productImage = button.closest('.product').querySelector('img').src;
-            var productName = button.closest('.product').querySelector('h3').textContent;
-            var productPrice = button.closest('.product').querySelector('.price-addtoCartbutton p').textContent.replace('P', ''); // Assuming the price is in the format "P399.00"
 
-            console.log('Product ID:', productId);
-            console.log('Product Image:', productImage);
-            console.log('Product Name:', productName);
-            console.log('Product Price:', productPrice);
+let buttons = document.querySelectorAll('#section2 .go-to-store');
 
-            // Send a request to the server to add the product to the cart
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '../includes/addtocart.php', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        // Product added successfully
-                        alert('Product added to cart');
-                    } else {
-                        // Error adding product to cart
-                        alert('Error adding product to cart');
-                    }
-                }
-            };
-            xhr.send('productId=' + productId + '&productImage=' + productImage + '&productName=' + productName + '&productPrice=' + productPrice);
+buttons.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        let containers = document.querySelectorAll('#section2 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'paused';
+        });
+    });
+
+    button.addEventListener('mouseout', function() {
+        let containers = document.querySelectorAll('#section2 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'running';
         });
     });
 });
-*/
+
+let buttons2 = document.querySelectorAll('#section3 .go-to-store');
+
+buttons2.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        let containers = document.querySelectorAll('#section3 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'paused';
+        });
+    });
+
+    button.addEventListener('mouseout', function() {
+        let containers = document.querySelectorAll('#section3 .deals-of-the-week-container');
+        containers.forEach(container => {
+            container.style.animationPlayState = 'running';
+        });
+    });
+});
 
 
 
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+  let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop) {
+    // Scroll down
+    document.getElementById("theheader").style.top = "-100px"; // Adjust the value as needed
+  } else {
+    // Scroll up
+    document.getElementById("theheader").style.top = "0";
+  }
+  lastScrollTop = currentScroll;
+});

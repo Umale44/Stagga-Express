@@ -11,10 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productName = $_POST['productName'];
     $price = $_POST['price'];
     $productDetail = $_POST['productDetail'];
+    $category = $_POST['category'];
 
     // Image handling
-    $targetDir = ""; // Directory where images will be saved
-    $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+    $targetDir = "../"; // Directory where images will be saved
+    $fileName = basename($_FILES["image"]["name"]);
+    $targetFile = $targetDir . $fileName;
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
     // Check if image file is a actual image or fake image
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        if($imageFileType != "jpg" && $imageFileType != "webp" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         } else {
@@ -36,10 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $storeID = $seller->getStoreID();
 
                     // SQL query to insert the product into the database
-                    $sql = "INSERT INTO Product (productName, price, image, productDetail, storeID) 
-                            VALUES (?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO Product (productName, price, image, productDetail, category, storeID) 
+                            VALUES (?, ?, ?, ?, ?, ?)";
                     $stmt = $pdo->prepare($sql);
-                    $stmt->execute([$productName, $price, $targetFile, $productDetail, $storeID]);
+                    $stmt->execute([$productName, $price, $fileName, $productDetail, $category, $storeID]);
                     
                     echo "Product added successfully";
                 } else {
@@ -64,8 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../customer-acc/checkout.css">
 </head>
 <body>
+    <div class="main-container">
     <h1>Add Product</h1>
     <form action="" method="post" enctype="multipart/form-data">
         <label for="productName">Product Name:</label>
@@ -77,10 +81,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="image">Image:</label>
         <input type="file" id="image" name="image" required><br><br>
 
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required><br><br>
+
         <label for="productDetail">Product Detail:</label><br>
         <textarea id="productDetail" name="productDetail" rows="4" cols="50" required></textarea><br><br>
-        <input type="submit" value="Add Product">
+        <input type="submit" class="submit-btn" value="Add Product">
     </form>
+    </div>
 </body>
 </html>
 

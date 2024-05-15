@@ -4,14 +4,138 @@ body {
     padding: 0;
     background-color: #000000;
 }
+#theheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: top 0.3s ease;
+    
+}
 
-.cart-container {
+#dropdownnav {
+    /*order: -1; /* Move to the beginning */
+    margin-right: auto; /* Push to the left */
+    margin-left: 3.5%;
+}
+
+#staggamainlogo {
+    margin-left: 13%; /* Center align */
+}
+#staggamainlogo img{
+    height: 150px;
+}
+
+#searchbar {
+    margin-left: auto; /* Push to the right */
+    margin-right: -41%;
+    margin-bottom: 10px; /* Space between search bar and buttons */
+    height:30px;
+    width: 200px;
+    color: white;
+    border-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline:none;
+    background-color: #000000;
+    
+}
+#cart,
+#profile {
+    margin-top: 100px; /* Space between buttons */
+    
+}
+#cart{
+    margin-right: 2%;
+    margin-left: auto;
+    
+}
+i{
+    color:white;
+}
+#profile{
+    margin-right: 13%;
+}
+#profile i:hover {
+    color: #e91e63;    
+}
+
+#cart i:hover {
+    color: #e91e63;    
+} 
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin-left:0px;
+    cursor: pointer;
+}
+
+.hamburger-icon:before, .hamburger-icon:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon:before {
+    top: 0;
+}
+
+.hamburger-icon:after {
+    bottom: 0;
+}
+
+/* Rotate lines to form an X when hovered over */
+.hamburger-icon:hover:before {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.hamburger-icon:hover:after {
+    transform: rotate(-45deg);
+    bottom: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: none;
+    min-width: 200px;
+    height: 100px;
+    z-index: 2;
+    border: none;
+    outline: none;
+    margin-left:-4.2%;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #686868;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.main-container {
     max-width: 800px;
     margin: 40px auto 0 auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom:100px ;
 }
 
 .cart-items {
@@ -36,4 +160,103 @@ body {
 
 h1 {
     text-align: center;
+}
+.place-order-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.remove-btn {
+    display: block;
+    width: 130px;
+    padding: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.place-order-btn:hover {
+    background-color: #0056b3;
+}
+.remove-btn:hover {
+    background-color: #0056b3;
+}
+.container2 {
+    margin: auto;
+    padding-top: 45px;
+    display: flex;
+    height: 100%;
+    border-top: 10px solid white;
+    background-color: black;
+    color: white;
+}
+
+.container2 ul {
+    padding: 10px 115px;
+    list-style-type: none;
+    color: white;
+}
+.container2 a{
+    color: white;
+}
+
+.container2 a:hover {
+    border-bottom: 2px solid white
+    
+}
+
+.container2 img {
+    margin-left: 350px;
+}
+
+.social-footer {
+    background-color:black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the end (right) */
+    align-items: flex-end; /* Align items to the bottom */
+    height: 100px; /* Adjust the height of the footer */
+    
+}
+
+.socials {
+    display: flex; /* Make the social icons container a flex container */
+    align-items: center; /* Align icons to the right */
+    margin-left: 95px;
+    color: white;
+}
+
+.socials a {
+    color: white;
+    margin-left: 15px; /* Add margin to create space between icons */
+    font-size: 1.5em;
+    transition: all .2s ease-in-out;
+}
+
+.socials a:first-child {
+    margin-left: 20px; /* Remove top margin for the first icon */
+}
+
+.socials a:hover {
+    color: #e91e63;
+   
+    
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1);
+    color: #e91e63;
+    overflow: hidden;
 }

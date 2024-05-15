@@ -8,13 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $openingHours = $_POST["opening-hours"];
 
     // Image handling
-    if (isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
-        $targetDir = ""; // Directory where images will be saved
-        $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+    if (isset($_FILES["logo"]) && $_FILES["logo"]["error"] == UPLOAD_ERR_OK) {
+        $targetDir = "business-acc/"; // Directory where images will be saved
+        $fileName = basename($_FILES["logo"]["name"]);
+        $targetFile = $targetDir . $fileName;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
         // Check if image file is a actual image or fake image
-        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        $check = getimagesize($_FILES["logo"]["tmp_name"]);
         if ($check === false) {
             echo "File is not an image.";
             exit();
@@ -26,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-            echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+        if (move_uploaded_file($_FILES["logo"]["tmp_name"], $targetFile)) {
+            echo "The file ". basename( $_FILES["logo"]["name"]). " has been uploaded.";
 
             // Check if any field is empty
             if (empty($username) || empty($password) || empty($storeAddress) || empty($description) || empty($openingHours) || empty($targetFile) || empty($storeName)) {
@@ -36,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             try {
-                require_once "connection.php";
+                require_once "includes/connection.php";
 
                 // Insert user into users table
                 $query = "INSERT INTO users (username, password, usertype) VALUES (:username, :password, 'business')";
@@ -46,14 +47,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->execute();
 
                 // Insert store details into store table
-                $query = "INSERT INTO store (username, storeName, storeAddress, description, openingHours, logo) VALUES (:username, :storeName, :storeAddress, :description, :openingHours, :logo)";
+                $query = "INSERT INTO store (username, storeName, storeAddress, description, status, openingHours, logo) VALUES (:username, :storeName, :storeAddress, :description, 'Inactive', :openingHours, :logo)";
                 $stmt = $pdo->prepare($query);
                 $stmt->bindParam(":username", $username);
                 $stmt->bindParam(":storeName", $storeName);
                 $stmt->bindParam(":storeAddress", $storeAddress);
                 $stmt->bindParam(":description", $description);
                 $stmt->bindParam(":openingHours", $openingHours);
-                $stmt->bindParam(":logo", $targetFile);
+                $stmt->bindParam(":logo", $fileName);
                 $stmt->execute();
 
                 echo '<script>alert("Sign up successful. Click OK to proceed to login."); window.location = "login.php";</script>';

@@ -169,15 +169,18 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header id="theheader">
+<header id="theheader">
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
-                <a href="store.html" class="stores">Stores</a>
-                <a href="#">Fashion</a>
+                <a href="store.html">Stores</a>
+                <a href="fashion.html">Fashion</a>
                 <a href="#">Electronics</a>
                 <a href="#">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
+                <a href="orders.php">My Orders</a>
+                <a href="logout.php">Log out</a>
+
             </div>
         </div>
         
@@ -189,13 +192,13 @@
             <input type="text" placeholder="Search" id="searchbar">
         </div>
         <div id="cart">
-            <a href="cart.php"><button class="cart">Cart</button></a>
+            <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
         </div>
-
         <div id="profile">
-            <a href="profile.php"><button class="profile">Profile</button></a>
-        </div>  
-    </header> 
+            <a href="profile.php"><i class="fas fa-user"></i></a>
+        </div>       
+
+    </header>
     
     <div class="stores-background">
         <video autoplay muted loop poster="">
@@ -204,315 +207,72 @@
         </video>
     </div>
     
-    <div class="products">
-        <h2>Tops</h2>
-        <div class="container">
-            <div class="sliderwrapper">
-                <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
-                <div class="product-row">
-                    <div class="product">
-                        <img src="top1.webp" alt="Top 1">
-                        <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P799.00</p>
-                            <form action="../includes/addtocart.php" method="post">
-                                <input type="hidden" name="productId" value="6">
-                                <input type="hidden" name="productImage" value="top1.webp">
-                                <input type="hidden" name="productName" value="G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt">
-                                <input type="hidden" name="productPrice" value="799.00">
-                                <div class="quantity-selector">
-                                    <!--<label for="quantity">Quantity:</label>-->
-                                    <select id="quantity" name="quantity">
-                                        <?php
-                                            // Generate options for quantity, starting from 1
-                                            for ($i = 1; $i <= 20; $i++) {
-                                                echo "<option value='$i'>$i</option>";
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                                <button type="submit" class="add-to-cart">Add to Cart</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top2.webp" alt="Top 1">
-                        <h3>G-Star Men's Slim Base RT Blue T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P699.00</p>
-                            <form action="../includes/addtocart.php" method="post">
-                                <input type="hidden" name="productId" value="8">
-                                <input type="hidden" name="productImage" value="top2.webp">
-                                <input type="hidden" name="productName" value="G-Star Men's Slim Base RT Blue T-Shirt">
-                                <input type="hidden" name="productPrice" value="699.00">
-                                <div class="quantity-selector">
-                                    <!--<label for="quantity">Quantity:</label>-->
-                                    <select id="quantity" name="quantity">
-                                        <?php
-                                            // Generate options for quantity, starting from 1
-                                            for ($i = 1; $i <= 20; $i++) {
-                                                echo "<option value='$i'>$i</option>";
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                                <button type="submit" class="add-to-cart">Add to Cart</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top3.webp" alt="Top 1">
-                        <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P159.00</p>
-                            <form action="../includes/addtocart.php" method="post">
-                                <input type="hidden" name="productId" value="8">
-                                <input type="hidden" name="productImage" value="top3.webp">
-                                <input type="hidden" name="productName" value="Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt">
-                                <input type="hidden" name="productPrice" value="159.00">
-                                <div class="quantity-selector">
-                                    <!--<label for="quantity">Quantity:</label>-->
-                                    <select id="quantity" name="quantity">
-                                        <?php
-                                            // Generate options for quantity, starting from 1
-                                            for ($i = 1; $i <= 20; $i++) {
-                                                echo "<option value='$i'>$i</option>";
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                                <button type="submit" class="add-to-cart">Add to Cart</button>
-                            </form>  
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top4.webp" alt="Top 1">
-                        <h3>Men's Relay Jeans Outline Signature Navy Graphic T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P159.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top5.webp" alt="Top 1">
-                        <h3>Men's Markham Long Sleeve Contrast Collar Navy/Milk Golfer</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P499.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top1.webp" alt="Top 1">
-                        <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P799.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top1.webp" alt="Top 1">
-                        <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P799.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top1.webp" alt="Top 1">
-                        <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P799.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top1.webp" alt="Top 1">
-                        <h3>G-Star Men's Skeleton Dog Chest GR Slim RT Black T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P799.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top3.webp" alt="Top 1">
-                        <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P159.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top3.webp" alt="Top 1">
-                        <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P159.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="top3.webp" alt="Top 1">
-                        <h3>Men's Relay Jeans Abstract Block Petrol Blue Graphic T-Shirt</h3>
-                        <div class="price-addtoCartbutton">
-                            <p>P159.00</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
-            </div>
-            <div class="slider-scrollbar">
-                <div class="scrollbar-track">
-                    <div class="scrollbar-thumb">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr> 
-        <h2>Pants</h2>
-        <div class="product-row">
-        <div class="product">
-            <img src="pants2.webp" alt="Men's Markham Core Knit Mocha Jogger">
-        <h3>Men's Markham Core Knit Mocha Jogger</h3>
-    <div class="price-addtoCartbutton">
-        <p>P399.00</p>
-        <form action="../includes/addtocart.php" method="post">
-            <input type="hidden" name="productId" value="4">
-            <input type="hidden" name="productImage" value="pants2.webp">
-            <input type="hidden" name="productName" value="Men's Markham Core Knit Mocha Jogger">
-            <input type="hidden" name="productPrice" value="399.00">
-            <button type="submit" class="add-to-cart">Add to Cart</button>
-        </form>
-    </div>
-</div>
+    <?php
+// Include the database connection file
+include '../includes/connection.php';
 
-            <div class="product">
-                <img src="pants3.webp" alt="Men's Relay Jeans Utility Stone Cargo Pants">
-                <h3>Men's Relay Jeans Utility Stone Cargo Pants</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P899.00</p>
-                    <form action="../includes/addtocart.php" method="post">
-                        <input type="hidden" name="productId" value="5">
-                        <input type="hidden" name="productImage" value="pants3.webp">
-                        <input type="hidden" name="productName" value="Men's Relay Jeans Utility Stone Cargo Pants">
-                        <input type="hidden" name="productPrice" value="899.00">
-                        <button type="submit" class="add-to-cart">Add to Cart</button>
-                    </form>
-                </div>
-            </div>
-            <div class="product">
-                <img src="pants4.webp" alt="Men's Markham Multi Fabric Natural Utility Pants">
-                <h3>Men's Markham Multi Fabric Natural Utility Pants</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P699.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="pants1.webp" alt="Men's Union-DNM Light Grey Cargo Pants">
-                <h3>Men's Union-DNM Light Grey Cargo Pants</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P1,119.20</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="pants5.webp" alt="Men's Markham Smart Slim Tapered Flannel Grey Trouser">
-                <h3>Men's Markham Smart Slim Tapered Flannel Grey Trouser</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P699.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <h2>Jackets</h2>
-        <div class="product-row">
-            <div class="product">
-                <img src="jacket1.webp" alt="Men's Markham Core Knit Mocha Jogger">
-                <h3>Men's Relay Jeans Black Gilet</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P799.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="jacket2.webp" alt="Men's Relay Jeans Utility Stone Cargo Pants">
-                <h3>Men's Relay Jeans Hooded Grey Puffer Jacket</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P999.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="jacket3.webp" alt="Men's Relay Jeans Hooded Black Puffer Jacket">
-                <h3>Men's Relay Jeans Hooded Black Puffer Jacket</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P999.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="jacket4.webp" alt="Men's Union-DNM Light Grey Cargo Pants">
-                <h3>Men's Markham Borg Utility Fatigue Sherpa Shacket</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P799.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="jacket5.webp" alt="Men's Markham Functional Black Jacket">
-                <h3>Men's Markham Functional Black Jacket</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P799.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <h2>Shoes</h2>
-        <div class="product-row">
-            <div class="product">
-                <img src="shoe1.webp" alt="Men's Jonathan D Landon Camel Derby Shoe">
-                <h3>Men's Jonathan D Landon Camel Derby Shoe</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P1,099.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="shoe2.webp" alt="Men's Relay Jeans Leather Suede Black Court">
-                <h3>Men's Relay Jeans Leather Suede Black Court</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P1,399.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="shoe3.webp" alt="G-Star Men's Noxer Nub Black Boot">
-                <h3>G-Star Men's Noxer Nub Black Boot</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P3,499.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="shoe4.webp" alt="Men's Markham Premium Lace Up Tan Boot">
-                <h3>Men's Markham Premium Lace Up Tan Boot</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P1,499.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="shoe5.webp" alt="Men's Jonathan D Penny Moc Burgundy Loafer">
-                <h3>Men's Jonathan D Penny Moc Burgundy Loafer</h3>
-                <div class="price-addtoCartbutton">
-                    <p>P999.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
+// Fetch all products from the database
+$sql = "SELECT * FROM product WHERE storeID = 1";
+$stmt = $pdo->query($sql);
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Organize products by category
+$organizedProducts = [];
+foreach ($products as $product) {
+    $category = $product['category'];
+    if (!isset($organizedProducts[$category])) {
+        $organizedProducts[$category] = [];
+    }
+    $organizedProducts[$category][] = $product;
+}
+
+// Display products by category
+foreach ($organizedProducts as $category => $products) {
+    echo "<div class='products'>";
+    echo "<h2>$category</h2>";
+    echo "<div class='container'>";
+    echo "<div class='sliderwrapper'>";
+    echo "<button id='prev-slide' class='slide-button material-symbols-rounded'>chevron_left</button>";
+    echo "<div class='product-row'>";
+    
+    foreach ($products as $product) {
+        echo "<div class='product'>";
+        echo "<img src='../{$product['image']}' alt='{$product['productName']}'>";
+        echo "<h3>{$product['productName']}</h3>";
+        echo "<div class='price-addtoCartbutton'>";
+        echo "<p>P" . number_format($product['price'], 2) . "</p>";
+        echo "<form action='../includes/addtocart.php' method='post'>";
+        echo "<input type='hidden' name='productID' value='{$product['productID']}'>";
+        echo "<input type='hidden' name='productImage' value='{$product['image']}'>";
+        echo "<input type='hidden' name='productName' value='{$product['productName']}'>";
+        echo "<input type='hidden' name='productPrice' value='{$product['price']}'>";
+        echo "<div class='quantity-selector'>";
+        echo "<select id='quantity' name='quantity'>";
+        for ($i = 1; $i <= 20; $i++) {
+            echo "<option value='$i'>$i</option>";
+        }
+        echo "</select>";
+        echo "</div>";
+        echo "<button type='submit' class='add-to-cart'>Add to Cart</button>";
+        echo "</form>";
+        echo "</div>";
+        echo "</div>";
+    }
+    
+    echo "</div>"; // Close product-row
+    echo "<button id='next-slide' class='slide-button material-symbols-rounded'>chevron_right</button>";
+    echo "</div>"; // Close sliderwrapper
+    echo "<div class='slider-scrollbar'>";
+    echo "<div class='scrollbar-track'>";
+    echo "<div class='scrollbar-thumb'>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>"; // Close container
+    echo "</div>"; // Close products
+}
+?>
+
     <br>
     
     <h1>ELEVATE YOUR STYLE THROUGH MARKHAM</h1>
@@ -529,11 +289,12 @@
             <nav>
                 <ul>
                     <li><h3>Site Links</h3></li>
-                    <li><a href="index.php" style="text-decoration: none;">Home</a></li>
+                    <li><a href="home.php" style="text-decoration: none;">Home</a></li>
                     <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
                     <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
                     <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
                     <li><a href="homeandoffice.html" style="text-decoration: none;">Home and Office</a></li>
+                    <li><a href="orders.php" style="text-decoration: none;">My Orders</a></li>
                     <li><a href="Form.html" style="text-decoration: none;">Join Us</a></li>
                 </ul>
             </nav>
