@@ -14,7 +14,7 @@ h1 {
     z-index: 1;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
-    color: rgb(3, 15, 45);
+    color: white;
     text-align: center;
     background:none;
 }
@@ -22,7 +22,7 @@ h2{
     color: white;
     background: none;
 }
-ha{
+.ha{
     color: white;
     background: none;
     font-size: 50px;
@@ -160,24 +160,48 @@ h4{
     object-fit: cover;
 }
 
-.outdoor-kway{
+.more-tech {
     margin: 0 auto;
     max-width: 1200px;
     position: relative;
+    overflow:hidden;
+    white-space: nowrap;
 }
-.outdoor-kway img{
-    width:100%;
-    height: auto;
-    filter: brightness(50%);
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
 }
-.bottom-left-kway {
-    position: absolute;
-    bottom: 80px;
-    left: 10px;
+
+.scroll-container::-webkit-scrollbar {
+    display: none;  /* For Chrome, Safari, and Opera */
+}
+
+.scroll-container a {
+    display: inline-block;
+    margin-right: 10px; /* Space between links/images */
+}
+
+.scroll-container img {
+    height: 300px; /* Adjust height as needed */
+    filter: brightness(100%);
+}
+
+.shop-now-container {
+    display: flex;
+    gap: 20px;
+}
+
+.shop-now a {
     color: white;
-    padding: 10px;
-    background: none;
+    text-decoration: none;
 }
+
+
+
 
 .shop-now-container {
     display: flex; /* Use flexbox */
