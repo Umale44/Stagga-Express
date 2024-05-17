@@ -166,19 +166,22 @@ h4{
     position: relative;
     overflow:hidden;
     white-space: nowrap;
+    display: flex;
 }
 
-.scroll-container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
-}
+
 
 .scroll-container::-webkit-scrollbar {
     display: none;  /* For Chrome, Safari, and Opera */
 }
+
+
+.more-tech .scroll-container {
+    display: flex;
+    white-space: nowrap;
+    animation: 50s infiniteScroll infinite linear;
+}
+
 
 .scroll-container a {
     display: inline-block;
@@ -188,6 +191,10 @@ h4{
 .scroll-container img {
     height: 300px; /* Adjust height as needed */
     filter: brightness(100%);
+    transition: filter 0.4s ease;
+}
+.scroll-container img:hover{
+    filter: brightness(0.5);
 }
 
 .shop-now-container {
