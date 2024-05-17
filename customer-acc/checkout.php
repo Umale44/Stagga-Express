@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stagga Express | Checkout</title>
+    <title>Stagga Express | The Home of express delivery | Checkout</title>
+    <link rel="icon" href="staggalogosmall.png"
+		type="image/x-icon">
     <link rel="stylesheet" href="checkout.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>

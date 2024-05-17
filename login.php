@@ -129,7 +129,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <a href="index.html"><img src="staggalogosmall.png" alt=""></a>
     <div class="main-container">
         <section class="form-container">
             <div class="title">
@@ -151,6 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 
                 <p>Dont have an account? <a href="signupcusorbus.html">Register now</a></p>
+                <p><a href="index.html">Back to home page</a></p>
             </form>
         </section>
     </div>

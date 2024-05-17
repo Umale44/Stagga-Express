@@ -42,6 +42,7 @@
             <th>Product Name</th>
             <th>Total Amount</th>
             <th>Quantity</th>
+            <th>Address</th>
             <th>Store Name</th>
             <th>Customer Name</th>
             <th>Delivery Status</th>
@@ -49,7 +50,7 @@
         <?php
             $currentOrderID = null;
 
-            $sql = "SELECT od.orderDetailID, od.orderID, p.productName, od.totalAmount, od.quantity, s.storeName, o.fullname, o.deliverystatus
+            $sql = "SELECT od.orderDetailID, od.orderID, p.productName, od.totalAmount, od.quantity, s.storeName, o.fullname, o.deliverystatus, o.address
                     FROM order_details od
                     JOIN orders o ON od.orderID = o.orderID
                     JOIN product p ON od.productID = p.productID
@@ -64,7 +65,7 @@
                     $currentOrderID = $row['orderID'];
                     
                     echo "<tr id='header'>";
-                echo "<td colspan='8' style='vertical-align: bottom;'><strong>Order ID: {$currentOrderID}</strong>";
+                echo "<td colspan='9' style='vertical-align: bottom;'><strong>Order ID: {$currentOrderID}</strong>";
 
                 echo "<form method='post' action='update_status.php'>";
                 echo "<input type='hidden' name='orderID' value='{$row['orderID']}'>";
@@ -85,8 +86,9 @@
                 echo "<td>{$row['orderDetailID']}</td>";
                 echo "<td>{$row['orderID']}</td>";
                 echo "<td>{$row['productName']}</td>";
-                echo "<td>{$row['totalAmount']}</td>";
+                echo "<td>P" . number_format($row['totalAmount'], 2) . "</td>";
                 echo "<td>{$row['quantity']}</td>";
+                echo "<td>{$row['address']}</td>";
                 echo "<td>{$row['storeName']}</td>";
                 echo "<td>{$row['fullname']}</td>";
                 echo "<td>{$row['deliverystatus']}</td>";

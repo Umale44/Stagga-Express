@@ -63,9 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("DELETE FROM cart WHERE customerID = ?");
     $stmt->execute([$customerID]);
 
-    // Redirect to a confirmation page or do something else
-    header("Location: ../customer-acc/cart.php");
-    exit();
+        echo '<script>alert("Order placed successfully. Your order is currently being processed"); window.location = "../customer-acc/home.php";</script>';
+    exit(); // Prevent further execution
 }
 }
 ?>

@@ -1,24 +1,34 @@
 <?php
-// Start the session
-session_start();
+    // Start the session
+    session_start();
 
-// Include the database connection file
-include '../includes/connection.php';
-include '../includes/Seller.php';
+    // Include the database connection file
+    include '../includes/connection.php';
+    include '../includes/Seller.php';
 
-// Retrieve store logo path based on the storeID
-if (isset($_SESSION['store']) && !empty($_SESSION['store'])) {
-    $serializedSeller = $_SESSION['store'];
-    $seller = unserialize($serializedSeller);
-    $storeID = $seller->getStoreID();
+    if (!isset($_SESSION['store'])) {
+        header('Location: ../login.php');
+        exit();
+    }
 
-    $sql = "SELECT logo, status FROM store WHERE storeID = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$storeID]);
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    $logoPath = $row['logo'];
-    $status = $row['status'];
-}
+    // Retrieve store logo path based on the storeID
+    if (isset($_SESSION['store']) && !empty($_SESSION['store'])) {
+        $serializedSeller = $_SESSION['store'];
+        $seller = unserialize($serializedSeller);
+        $storeID = $seller->getStoreID();
+
+        $sql = "SELECT logo, status FROM store WHERE storeID = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$storeID]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $logoPath = $row['logo'];
+        $status = $row['status'];
+    }
+
+    // Function to check account status and redirect
+    
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -249,14 +259,32 @@ if (isset($_SESSION['store']) && !empty($_SESSION['store'])) {
         }
     
 </style>
+<script>
+    function checkAccountStatusAddProducts(event, status, url) {
+        event.preventDefault();
+        if (status != 'Active') {
+            alert('Can only add products with an active account.');
+        } else {
+            window.location.href = url;
+        }
+    }
+    function checkAccountStatusViewOrders(event, status, url) {
+        event.preventDefault();
+        if (status != 'Active') {
+            alert('Can only view orders with an active account.');
+        } else {
+            window.location.href = url;
+        }
+    }
+</script>
 </head>
 <body>
 <header id="theheader">
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
-                <a href="addproducts.php" class="products">Add Products</a>
-                <a href="orders.php" class="orders">Orders</a>
+                <a href="#" onclick="checkAccountStatusAddProducts(event, '<?php echo $status; ?>', 'addproducts.php');" class="products">Add Products</a>
+                <a href="#" onclick="checkAccountStatusViewOrders(event, '<?php echo $status; ?>', 'orders.php');" class="orders">Orders</a>
                 <a href="accountSettings.php" class="account-settings">Account Settings</a>
                 <a href="../includes/logout.php">Log Out</a>
             </div>
@@ -283,10 +311,10 @@ if (isset($_SESSION['store']) && !empty($_SESSION['store'])) {
     include '../includes/connection.php';
 
     if ($status == 'Inactive') {
-        echo "<div class='inactive-message'>Your Seller account is currently inactive. Request activation <a href='sellingplans.php' style='background: none; color: red;'>here</a>.</div></div>";
+        echo "<div class='inactive-message'>Your Seller account is currently inactive. Request activation <a href='sellingplans.php' style='background: none; color: red;'>here</a>.</div>";
 
     }elseif ($status == 'Pending') {
-        echo "<div class='pending-message'>Your Seller account is currently being Processed.</div></div>";
+        echo "<div class='pending-message'>Your Seller account is currently being Processed.</div>";
 
     }elseif ($status == 'Active') {
     $sql = "SELECT * FROM product WHERE storeID = ?";
@@ -318,7 +346,7 @@ foreach ($organizedProducts as $category => $products) {
         echo "<img src='../{$product['image']}' alt='{$product['productName']}'>";
         echo "<h3>{$product['productName']}</h3>";
         echo "<div class='price-addtoCartbutton'>";
-        echo "<p>P{$product['price']}</p>";
+        echo "<p>P" . number_format($product['price'], 2) . "</p>";
         echo "<form action='editproduct.php' method='post'>";
         echo "<input type='hidden' name='productID' value='{$product['productID']}'>";
         echo "<input type='hidden' name='productImage' value='{$product['image']}'>";
@@ -346,9 +374,10 @@ foreach ($organizedProducts as $category => $products) {
 
     echo "<h2>Your Orders</h2>";
     echo "<p>You have received 5 new orders in the last week.</p>";
-    echo "</div>";
+    
 }
 ?>
+</div>
 <footer class="navbar">
         <div class="container2 flex2">
             <ul>

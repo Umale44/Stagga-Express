@@ -97,3 +97,12 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+a {
+    
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color:#004997;
+}
