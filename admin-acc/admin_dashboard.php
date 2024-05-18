@@ -49,6 +49,7 @@ $totalSellers = $stmt->fetch(PDO::FETCH_ASSOC)['totalSellers'];
             <a href="admin_view_accounts.php">View All Accounts</a>
             <a href="orders.php">View Orders</a>
             <a href="requests.php">View Requests</a>
+            <a href="newproducts.php">New Products</a>
             <a href="../includes/logout.php">Log out</a>
             <!-- Add more actions as needed -->
         </div>

@@ -113,7 +113,7 @@
         }
         .sliderwrapper .slide-button#next-slide{
             right: -100px;
-            margin-top:-270px;
+            margin-top:-320px;
         }
 
         .product {
@@ -131,6 +131,12 @@
             padding: 5px 10px; /* Add padding */
             border: none; /* Remove border */
             cursor: pointer; /* Add pointer cursor on hover */
+            transition: filter 0.4s ease;
+        }
+        .add-to-cart:hover{
+            background-color: white;
+            color:#007bff;
+            font-weight:bold;
         }
 
         .product img {
@@ -138,8 +144,8 @@
             height:250px; /* Maintain aspect ratio */
         }
 
-       .product h3{
-            margin-bottom: 120px;
+       .product .productName{
+            margin-bottom: 180px;
         }
         
         .price-addtoCartbutton{
@@ -163,7 +169,7 @@
             background-color:white;
             color:black;
         }
-
+        
 
     </style>
     <script src="script.js" defer></script>
@@ -234,12 +240,21 @@ foreach ($organizedProducts as $category => $products) {
     echo "<div class='sliderwrapper'>";
     echo "<button id='prev-slide' class='slide-button material-symbols-rounded'>chevron_left</button>";
     echo "<div class='product-row'>";
-    
+
     foreach ($products as $product) {
+        // Fetch stock quantity for the product
+        $productID = $product['productID'];
+        $sqlStock = "SELECT quantity FROM stock WHERE productID = ?";
+        $stmtStock = $pdo->prepare($sqlStock);
+        $stmtStock->execute([$productID]);
+        $stock = $stmtStock->fetch(PDO::FETCH_ASSOC);
+        $quantityInStock = $stock['quantity'];
+
         echo "<div class='product'>";
         echo "<img src='../{$product['image']}' alt='{$product['productName']}'>";
-        echo "<h3>{$product['productName']}</h3>";
+        echo "<div class='productName'><h3>{$product['productName']}</h3></div>";
         echo "<div class='price-addtoCartbutton'>";
+        echo "<p id='number-in-stock'>In Stock: {$quantityInStock}</p>";
         echo "<p>P" . number_format($product['price'], 2) . "</p>";
         echo "<form action='../includes/addtocart.php' method='post'>";
         echo "<input type='hidden' name='productID' value='{$product['productID']}'>";
@@ -248,7 +263,7 @@ foreach ($organizedProducts as $category => $products) {
         echo "<input type='hidden' name='productPrice' value='{$product['price']}'>";
         echo "<div class='quantity-selector'>";
         echo "<select id='quantity' name='quantity'>";
-        for ($i = 1; $i <= 20; $i++) {
+        for ($i = 1; $i <= $quantityInStock; $i++) {
             echo "<option value='$i'>$i</option>";
         }
         echo "</select>";

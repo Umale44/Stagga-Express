@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
     $productName = $_POST['productName'];
     $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
     $productDetail = $_POST['productDetail'];
     $category = $_POST['category'];
 
@@ -38,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $storeID = $seller->getStoreID();
 
                     // SQL query to insert the product into the database
-                    $sql = "INSERT INTO Product (productName, price, image, productDetail, category, storeID) 
-                            VALUES (?, ?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO newproduct (productName, price, image, productDetail, quantity, category, storeID) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?)";
                     $stmt = $pdo->prepare($sql);
-                    $stmt->execute([$productName, $price, $fileName, $productDetail, $category, $storeID]);
+                    $stmt->execute([$productName, $price, $fileName, $productDetail, $quantity, $category, $storeID]);                  
                     
-                    echo "Product added successfully";
+                    echo '<script>alert("Product added successfully"); window.location = "home.php";</script>';
                 } else {
                     echo "Session variable 'store' is not set or empty.";
                 }
@@ -54,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "File is not an image.";
     }
-} else {
-    echo "Invalid request method.";
-}
+} 
 ?>
 
 
@@ -77,6 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="price">Price:</label>
         <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
+
+        <label for="price">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="0" step="1" required><br><br>
 
         <label for="image">Image:</label>
         <input type="file" id="image" name="image" required><br><br>

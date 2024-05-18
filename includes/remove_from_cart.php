@@ -11,13 +11,36 @@ if (isset($_SESSION['customer']) && !empty($_SESSION['customer'])) {
     if (isset($_POST['productID'])) {
         $productID = $_POST['productID'];
 
-        // Remove the product from the cart
-        $stmt = $pdo->prepare("DELETE FROM cart WHERE customerID = ? AND productID = ?");
-        $stmt->execute([$customerID, $productID]);
 
-        // Redirect back to the cart page
-        header("Location: ../customer-acc/cart.php");
-        exit();
+        try {
+            // Retrieve the quantity of the product in the cart
+            $stmt = $pdo->prepare("SELECT quantity FROM cart WHERE customerID = ? AND productID = ?");
+            $stmt->execute([$customerID, $productID]);
+            $cartItem = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($cartItem) {
+                $quantity = $cartItem['quantity'];
+
+                // Remove the product from the cart
+                $stmt = $pdo->prepare("DELETE FROM cart WHERE customerID = ? AND productID = ?");
+                $stmt->execute([$customerID, $productID]);
+
+                // Restore quantity in stock
+                $stmt = $pdo->prepare("UPDATE stock SET quantity = quantity + ? WHERE productID = ?");
+                $stmt->execute([$quantity, $productID]);
+
+                
+
+                // Redirect back to the cart page
+                header("Location: ../customer-acc/cart.php");
+                exit();
+            } else {
+                throw new Exception("Cart item not found.");
+            }
+        } catch (Exception $e) {
+            // Roll back the transaction if something failed
+            echo '<script>alert("Failed to remove product from cart."); window.history.back();</script>';
+        }
     } else {
         // Redirect to the cart page if productID is not set
         header("Location: ../customer-acc/cart.php");

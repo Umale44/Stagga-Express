@@ -4,7 +4,7 @@
         $storeID = $_POST['storeID'];
 
         // Update the status in the store table to "active"
-        $sqlUpdate = "UPDATE store SET status = 'active' WHERE storeID = :storeID";
+        $sqlUpdate = "UPDATE store SET status = 'Active' WHERE storeID = :storeID";
         $stmtUpdate = $pdo->prepare($sqlUpdate);
         $stmtUpdate->execute(['storeID' => $storeID]);
 

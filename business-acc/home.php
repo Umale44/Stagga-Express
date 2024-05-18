@@ -194,7 +194,7 @@
         }
         .sliderwrapper .slide-button#next-slide{
             right: -100px;
-            margin-top:-270px;
+            margin-top:-320px;
         }
 
         .product {
@@ -216,11 +216,11 @@
 
         .product img {
             width: 100%; /* Make the image fill the width of the product */
-            height:250px; /* Maintain aspect ratio */
+            height:300px; /* Maintain aspect ratio */
         }
 
        .product h3{
-            margin-bottom: 120px;
+            margin-bottom: 180px;
         }
         
         .price-addtoCartbutton{
@@ -277,6 +277,7 @@
         }
     }
 </script>
+<script src="../script.js" defer></script>
 </head>
 <body>
 <header id="theheader">
@@ -342,12 +343,21 @@ foreach ($organizedProducts as $category => $products) {
     echo "<div class='product-row'>";
     
     foreach ($products as $product) {
+        // Fetch stock quantity for the product
+        $productID = $product['productID'];
+        $sqlStock = "SELECT quantity FROM stock WHERE productID = ?";
+        $stmtStock = $pdo->prepare($sqlStock);
+        $stmtStock->execute([$productID]);
+        $stock = $stmtStock->fetch(PDO::FETCH_ASSOC);
+        $quantityInStock = $stock['quantity'];
+
         echo "<div class='product'>";
         echo "<img src='../{$product['image']}' alt='{$product['productName']}'>";
         echo "<h3>{$product['productName']}</h3>";
         echo "<div class='price-addtoCartbutton'>";
+        echo "<p id='number-in-stock'>In Stock: {$quantityInStock}</p>";
         echo "<p>P" . number_format($product['price'], 2) . "</p>";
-        echo "<form action='editproduct.php' method='post'>";
+        echo "<form action='editproducts.php' method='post'>";
         echo "<input type='hidden' name='productID' value='{$product['productID']}'>";
         echo "<input type='hidden' name='productImage' value='{$product['image']}'>";
         echo "<input type='hidden' name='productName' value='{$product['productName']}'>";
@@ -375,8 +385,66 @@ foreach ($organizedProducts as $category => $products) {
     echo "<h2>Your Orders</h2>";
     echo "<p>You have received 5 new orders in the last week.</p>";
     
+    echo "<h2>Products Still unavailable</h2>";
+    $sql = "SELECT * FROM newproduct WHERE storeID = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$storeID]);
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Organize products by category
+    $organizedProducts = [];
+    foreach ($products as $product) {
+    $category = $product['category'];
+    if (!isset($organizedProducts[$category])) {
+        $organizedProducts[$category] = [];
+    }
+    $organizedProducts[$category][] = $product;
 }
+
+foreach ($organizedProducts as $category => $products) {
+    echo "<div class='products'>";
+    echo "<h2>$category</h2>";
+    echo "<div class='container'>";
+    echo "<div class='sliderwrapper'>";
+    echo "<button id='prev-slide' class='slide-button material-symbols-rounded'>chevron_left</button>";
+    echo "<div class='product-row'>";
+    
+    foreach ($products as $product) {
+        // Fetch stock quantity for the product
+
+        echo "<div class='product'>";
+        echo "<img src='../{$product['image']}' alt='{$product['productName']}'>";
+        echo "<h3>{$product['productName']}</h3>";
+        echo "<div class='price-addtoCartbutton'>";
+        echo "<p>P" . number_format($product['price'], 2) . "</p>";
+        echo "<form action='editproducts.php' method='post'>";
+        echo "<input type='hidden' name='newProductID' value='{$product['newProductID']}'>";
+        echo "<input type='hidden' name='productImage' value='{$product['image']}'>";
+        echo "<input type='hidden' name='productName' value='{$product['productName']}'>";
+        echo "<input type='hidden' name='productPrice' value='{$product['price']}'>";
+        echo "<button type='submit' class='add-to-cart'>Edit Product</button>";
+        echo "</form>";
+        echo "</div>";
+        echo "</div>";
+    }
+    
+    echo "</div>"; // Close product-row
+    echo "<button id='next-slide' class='slide-button material-symbols-rounded'>chevron_right</button>";
+    echo "</div>"; // Close sliderwrapper
+    echo "<div class='slider-scrollbar'>";
+    echo "<div class='scrollbar-track'>";
+    echo "<div class='scrollbar-thumb'>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>"; // Close container
+    echo "</div>"; // Close products
+}
+}
+
 ?>
+
+
 </div>
 <footer class="navbar">
         <div class="container2 flex2">
@@ -410,4 +478,3 @@ foreach ($organizedProducts as $category => $products) {
     </footer>
 </body>
 </html>
-<script>"../customer-acc/script.js"</script>

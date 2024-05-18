@@ -198,3 +198,8 @@ window.addEventListener("scroll", function() {
   }
   lastScrollTop = currentScroll;
 });
+
+
+function showLoginAlert() {
+    alert("Login to add to cart");
+}

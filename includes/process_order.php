@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connection.php'; // Include your database connection file
+include 'connection.php'; // Include the database connection file
 include 'Customer.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $address = $_POST['address'];
     $phonenumber = $_POST['phone'];
-    $card_number = $_POST['cardnumber']; // These fields should come from your form
-    $expiry_date = $_POST['expiry']; // These fields should come from your form
-    $cc = $_POST['cc']; // These fields should come from your form
+    $card_number = $_POST['cardnumber']; // These fields should come from the form
+    $expiry_date = $_POST['expiry']; // These fields should come from the form
+    $cc = $_POST['cc']; // These fields should come from the form
     $orderDate = date('Y-m-d H:i:s');
     
     // Insert order into the orders table
@@ -56,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO order_details (orderID, productID, totalAmount, quantity, storeID) 
                                VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$orderID, $productID, $totalAmount, $quantity, $storeID]);
+
     }
     
-
     // Clear the cart for this customer
     $stmt = $pdo->prepare("DELETE FROM cart WHERE customerID = ?");
     $stmt->execute([$customerID]);

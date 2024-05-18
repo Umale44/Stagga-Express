@@ -497,23 +497,13 @@ if (!isset($_SESSION['customer'])) {
         <li>Mochudi</li>
         <li>Mogoditshane</li>
         <li>Lobatse</li>
-        <li>Thamaga</li>
         <li>Orapa</li>
         <li>Letlhakane</li>
         <li>Jwaneng</li>
         <li>Thamaga</li>
         <li>Bobonong</li>
         <li>Ramotswa</li>
-        <li>Tlokweng</li>
-        <li>Mmadinare</li><!---->
-        <li>Letlhakane</li>
-        <li>Jwaneng</li>
-        <li>Thamaga</li>
-        <li>Bobonong</li>
-        <li>Ramotswa</li>
-        <li>Tlokweng</li>
-        <li>Mmadinare</li>
-        
+        <li>Tlokweng</li>       
     </ul>
         </div>
         

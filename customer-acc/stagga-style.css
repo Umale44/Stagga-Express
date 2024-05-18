@@ -201,6 +201,9 @@ html, body {
     cursor: pointer; /* Add pointer cursor on hover */
 }
 
+.go-to-store:hover{
+    background-color: #002e60;
+}
 .go-to-store-button {
     position: absolute;
     bottom: 10px;

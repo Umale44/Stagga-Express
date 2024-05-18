@@ -1,11 +1,14 @@
+<?php
+    include '../includes/connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stagga Express | The Home of express delivery | Stores | Incredible Connections</title>
+    <title>Stagga Express | The Home of express delivery | Stores | Foschini</title>
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="../stores.css">
+    <link rel="stylesheet" href="stores.css">
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
@@ -28,10 +31,9 @@
             max-width: 1500px;
             width:100%
         }
-        
 
-       .product-row {
-             display: flex; /* Use flexbox for the product row */
+        .product-row {
+            display: flex; /* Use flexbox for the product row */
             margin-bottom: 20px; /* Add some space between rows */
             overflow: hidden; /* Hide overflow to create the sliding effect */
         }          
@@ -129,14 +131,20 @@
             padding: 5px 10px; /* Add padding */
             border: none; /* Remove border */
             cursor: pointer; /* Add pointer cursor on hover */
+            transition: filter 0.4s ease;
+        }
+        .add-to-cart:hover{
+            background-color: white;
+            color:#007bff;
+            font-weight:bold;
         }
 
         .product img {
             width: 100%; /* Make the image fill the width of the product */
-            height:180px; /* Maintain aspect ratio */
+            height:250px; /* Maintain aspect ratio */
         }
 
-       .product h3{
+       .product .productName{
             margin-bottom: 180px;
         }
         
@@ -161,12 +169,13 @@
             background-color:white;
             color:black;
         }
+        
 
     </style>
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header id="theheader">
+<header id="theheader">
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
@@ -196,19 +205,20 @@
         </div>       
 
     </header>
+    
     <div class="stores-background">
         <video autoplay muted loop poster="">
-            <source src="incredible-connections.mp4" type="video/mp4">
+            <source src="../foschini banner video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
-    <h1>INCREDIBLE CONNECTIONS<br>THE GAMING UNIVERSE AT YOUR FINGERTIPS<br></h1>
+    
     <?php
 // Include the database connection file
 include '../includes/connection.php';
 
 // Fetch all products from the database
-$sql = "SELECT * FROM product WHERE storeID = 2";
+$sql = "SELECT * FROM product WHERE storeID = 4";
 $stmt = $pdo->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -230,7 +240,7 @@ foreach ($organizedProducts as $category => $products) {
     echo "<div class='sliderwrapper'>";
     echo "<button id='prev-slide' class='slide-button material-symbols-rounded'>chevron_left</button>";
     echo "<div class='product-row'>";
-    
+
     foreach ($products as $product) {
         // Fetch stock quantity for the product
         $productID = $product['productID'];
@@ -239,10 +249,10 @@ foreach ($organizedProducts as $category => $products) {
         $stmtStock->execute([$productID]);
         $stock = $stmtStock->fetch(PDO::FETCH_ASSOC);
         $quantityInStock = $stock['quantity'];
-        
+
         echo "<div class='product'>";
         echo "<img src='../{$product['image']}' alt='{$product['productName']}'>";
-        echo "<h3>{$product['productName']}</h3>";
+        echo "<div class='productName'><h3>{$product['productName']}</h3></div>";
         echo "<div class='price-addtoCartbutton'>";
         echo "<p id='number-in-stock'>In Stock: {$quantityInStock}</p>";
         echo "<p>P" . number_format($product['price'], 2) . "</p>";
@@ -277,7 +287,11 @@ foreach ($organizedProducts as $category => $products) {
     echo "</div>"; // Close products
 }
 ?>
+
     <br>
+    
+    <h1>ELEVATE YOUR STYLE THROUGH FOSCHINI</h1>
+
     <footer class="navbar">
         <div class="container2 flex2">
             <ul>
@@ -309,6 +323,9 @@ foreach ($organizedProducts as $category => $products) {
             <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
             <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
         </div>
-    </footer>
+    </footer>  
 </body>
 </html>
+        
+
+

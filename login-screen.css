@@ -75,7 +75,10 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
-
+.main-container .form-container .input-field .btn:hover{
+    background: #373636;
+    color:#f5f5f5;
+}
 /* Close button */
 .main-container .close {
     position: absolute;
