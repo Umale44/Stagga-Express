@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $stmt = $pdo->prepare("SELECT storeName FROM store WHERE storeID = ?");
         $stmt->execute([$storeID]);
-        // Assume $stmt is your PDOStatement object
+        
         $row = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch the next row as an associative array
         $storeName = $row['storeName']; // Access the 'storeName' column from the fetched row
 

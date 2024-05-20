@@ -9,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $customer = unserialize($serializedCustomer);
         $customerID = $customer->getCustomerID();
         $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $address = $_POST['address'];
-    $phonenumber = $_POST['phone'];
-    $card_number = $_POST['cardnumber']; // These fields should come from the form
-    $expiry_date = $_POST['expiry']; // These fields should come from the form
-    $cc = $_POST['cc']; // These fields should come from the form
-    $orderDate = date('Y-m-d H:i:s');
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $phonenumber = $_POST['phone'];
+        $card_number = $_POST['cardnumber']; 
+        $expiry_date = $_POST['expiry']; 
+        $cc = $_POST['cc']; 
+        $orderDate = date('Y-m-d H:i:s');
     
     // Insert order into the orders table
     $stmt = $pdo->prepare("INSERT INTO orders (customerID, fullname, email, address, phonenumber, orderDate, deliverystatus) 

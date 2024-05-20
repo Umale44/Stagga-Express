@@ -19,8 +19,6 @@ $totalCustomers = $stmt->fetch(PDO::FETCH_ASSOC)['totalCustomers'];
 $stmt = $pdo->query("SELECT COUNT(*) AS totalSellers FROM store");
 $totalSellers = $stmt->fetch(PDO::FETCH_ASSOC)['totalSellers'];
 
-// You can add more queries to get additional information as needed
-
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +27,9 @@ $totalSellers = $stmt->fetch(PDO::FETCH_ASSOC)['totalSellers'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="admin_dashboard.css"> <!-- Include your CSS file here -->
+    <link rel="stylesheet" href="admin_dashboard.css"> 
+    <link rel="icon" href="../staggalogosmall.png"
+		type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -43,15 +43,16 @@ $totalSellers = $stmt->fetch(PDO::FETCH_ASSOC)['totalSellers'];
                 <h2>Total Sellers</h2>
                 <p><?php echo $totalSellers; ?></p>
             </div>
-            <!-- Add more summary items as needed -->
+            
         </div>
         <div class="actions">
             <a href="admin_view_accounts.php">View All Accounts</a>
             <a href="orders.php">View Orders</a>
             <a href="requests.php">View Requests</a>
+            <a href="viewproducts.php">View Products</a>
             <a href="newproducts.php">New Products</a>
             <a href="../includes/logout.php">Log out</a>
-            <!-- Add more actions as needed -->
+            
         </div>
     </div>
 </body>

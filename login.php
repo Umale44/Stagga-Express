@@ -1,22 +1,22 @@
 <?php
-// Prevent caching
-header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
     try {
         require_once "includes/connection.php";
-        $query = "SELECT * FROM users WHERE username = :username AND password = :password";
+
+        // Select the hashed password from the database
+        $query = "SELECT * FROM users WHERE username = :username";
         $stmt = $pdo->prepare($query);
-        $stmt->execute(array(':username' => $username, ':password' => $password));
+        $stmt->execute(array(':username' => $username));
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user) {
+        if ($user && password_verify($password, $user['password'])) {
             // Start session and store user information
             session_start();
             $_SESSION['username'] = $user['username'];
+
             if ($user['usertype'] === 'customer') {
                 // Include Customer class file
                 require_once "includes/Customer.php";
@@ -46,15 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Store the serialized Customer object in the session
                 $_SESSION['customer'] = $serializedCustomer;
 
-
                 // Redirect to customer-acc/home.php
                 header("Location: customer-acc/home.php");
                 exit();
             } elseif ($user['usertype'] === 'business') {
-                // Include Customer class file
+                // Include Seller class file
                 require_once "includes/Seller.php";
                 
-                // Fetch customer data
+                // Fetch business data
                 $queryBusiness = "SELECT * FROM store WHERE username = :username";
                 $stmtBusiness = $pdo->prepare($queryBusiness);
                 $stmtBusiness->execute(array(':username' => $username));
@@ -94,8 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Redirect to admin dashboard
                 header("Location: admin-acc/admin_dashboard.php");
                 exit();
-            }
-             else {
+            } else {
                 // Handle other user types as needed
                 echo "Invalid user type.";
             }
@@ -109,8 +107,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Query failed: " . $e->getMessage());
     }
 }
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

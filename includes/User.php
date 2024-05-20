@@ -19,10 +19,6 @@
              $this->username = $username;
         }
 
-        public function setPassword($password) {
-            // Hash the password before storing it
-            $this->passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        }
 
         public function getUserType() {
             return $this->userType;

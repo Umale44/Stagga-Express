@@ -1,5 +1,6 @@
 <?php
     include 'User.php';
+    //customer class from which a new customer is created
     class Customer extends User {
         private $customerID;
         private $firstname;

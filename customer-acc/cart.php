@@ -6,7 +6,7 @@
     <title>Stagga Express | The Home of express delivery | My Shopping Cart</title>
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
-    <link rel="stylesheet" href="cart.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="cart.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
 </head>
@@ -17,8 +17,8 @@
             <div class="dropdown-content">
                 <a href="store.html">Stores</a>
                 <a href="fashion.html">Fashion</a>
-                <a href="#">Electronics</a>
-                <a href="#">Home & Office</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="home-office.html">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
                 <a href="orders.php">My Orders</a>
                 <a href="logout.php">Log out</a>
@@ -103,11 +103,12 @@
             <nav>
                 <ul>
                     <li><h3>Site Links</h3></li>
-                    <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+                    <li><a href="home.php" style="text-decoration: none;">Home</a></li>
                     <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
-                    <li><a href="Fashion.html" style="text-decoration: none;">Fashion</a></li>
+                    <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
                     <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
-                    <li><a href="homeandoffice.html" style="text-decoration: none;">Home and Office</a></li>
+                    <li><a href="home-office.html" style="text-decoration: none;">Home and Office</a></li>
+                    <li><a href="orders.php" style="text-decoration: none;">My Orders</a></li>
                     <li><a href="outdoor.html" style="text-decoration: none;">Outdoor</a></li>
                     <li><a href="Form.html" style="text-decoration: none;">Join Us</a></li>
                 </ul>

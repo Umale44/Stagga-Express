@@ -24,9 +24,6 @@
         $logoPath = $row['logo'];
         $status = $row['status'];
     }
-
-    // Function to check account status and redirect
-    
     
     
 ?>
@@ -216,7 +213,7 @@
 
         .product img {
             width: 100%; /* Make the image fill the width of the product */
-            height:300px; /* Maintain aspect ratio */
+            height:295px; /* Maintain aspect ratio */
         }
 
        .product h3{
@@ -237,7 +234,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 1px;
-            width: 50px; /* Adjust the width as needed */
+            width: 50px; 
             margin-bottom:15px;
         }
         option{

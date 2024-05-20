@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stagga Express | The Home of express delivery</title>
-    <link rel="stylesheet" href="stagga-style.css">
-    <link rel="stylesheet" href="electronics.css">
-    <link rel="icon" href="staggalogosmall.png"
+    <title>Stagga Express | The Home of express delivery | Electronics</title>
+    <link rel="stylesheet" href="../stagga-style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../electronics.css">
+    <link rel="icon" href="../staggalogosmall.png"
 		type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-...your-sha384-hash-here..." crossorigin="anonymous">
         <style>  
@@ -60,32 +61,35 @@
         <div id="dropdownnav" class="dropdown">
             <div class="hamburger-icon"></div>
             <div class="dropdown-content">
-                <a href="store.html" class="stores">Stores</a>
-                <a href="Fashion.html" class="fashion">Fashion</a>
-                <a href="electronics.html" class="electronics">Electronics</a>
+                <a href="store.html">Stores</a>
+                <a href="fashion.html">Fashion</a>
+                <a href="electronics.html">Electronics</a>
                 <a href="home-office.html">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
+                <a href="orders.php">My Orders</a>
+                <a href="logout.php">Log out</a>
+
             </div>
         </div>
         
         <div id="staggamainlogo">
-            <a href="index.html"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
+            <a href="home.php"><img src="staggalogosmall.png" alt="staggalogo" id="staggalogonav"></a>
         </div>
 
         <div id="searchbar">
             <input type="text" placeholder="Search" id="searchbar">
         </div>
-        <div id="login">
-            <a href="login.php"><p>LOGIN</p></a>
+        <div id="cart">
+            <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
         </div>
+        <div id="profile">
+            <a href="profile.php"><i class="fas fa-user"></i></a>
+        </div>       
 
-        <div id="signup">
-            <a href="signupcusorbus.html"><p>SIGN UP</p></a>
-        </div> 
     </header>
 
     <div class="outdoor-background">
-        <img src="electronics.jpg" alt="Background Image">
+        <img src="../electronics.jpg" alt="Background Image">
         <div class="bo">
             <h1>ELECTRONICS</h1>
         </div>
@@ -93,15 +97,15 @@
 
     <section class="outdoor-container">
         <div class="outdoor-category">
-            <img src="gaming.png" alt="gaming">
+            <img src="../gaming.png" alt="gaming">
             <div class="bottom-left">
                 <h2>GAMING</h2>
-                <h3 class="shop-now"><a href="incredible-connections.html">SHOP NOW</a></h3>
+                <h3 class="shop-now"><a href="incredible-connections.php">SHOP NOW</a></h3>
             </div>
         </div>
 
         <div class="outdoor-category">
-            <img src="tv&audio.jpeg" alt="tv&audio">
+            <img src="../tv&audio.jpeg" alt="tv&audio">
             <div class="bottom-left">
                 <h2>TV,AUDIO &<br>MORE<br></h2>
                 <h3 class="shop-now"><a href="homecorp.html">SHOP NOW</a></h3>
@@ -109,7 +113,7 @@
         </div>
 
         <div class="outdoor-category">
-            <img src="appliances.webp" alt="appliances">
+            <img src="../appliances.webp" alt="appliances">
             <div class="bottom-left">
                 <h2>Appliances</h2>
                 <h3 class="shop-now"><a href="homecorp.html">SHOP NOW</a></h3>
@@ -121,7 +125,7 @@
         <h2>Trending Deals</h2>
         <div class="product-row">
             <div class="product">
-                <img src="watch 6.webp" alt="Top 1">
+                <img src="../watch 6.webp" alt="Top 1">
                 <h3>Samsung Galaxy Watch 6 40mm Black<br><br>Homecorp</h3>
                 <div class="price-addtoCartbutton">
                     <p>P4,599 from P7,499</p>
@@ -129,7 +133,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="hisense.webp" alt="Top 1">
+                <img src="../hisense.webp" alt="Top 1">
                 <h3>Hisense 65-inch Smart UHD TV 65A6K<br><br>Homecorp</h3>
                 <div class="price-addtoCartbutton">
                     <p>P8,999 from P11,999</p>
@@ -137,7 +141,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="macbook.webp" alt="Top 1">
+                <img src="../macbook.webp" alt="Top 1">
                 <h3>Apple MacBook Air 13 M1 7Core 256GB<br><br>Homecorp</h3>
                 <div class="price-addtoCartbutton">
                     <p>P15,999 from P18,999</p>
@@ -145,7 +149,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="asus rog.webp" alt="Top 1">
+                <img src="../asus rog.webp" alt="Top 1">
                 <h3>Asus Rog Ally Z1 Extreme<br><br>Incredible Connections</h3>
                 <div class="price-addtoCartbutton">
                     <p>P12,999 from P15,999</p>
@@ -153,7 +157,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="iphone.webp" alt="Top 1">
+                <img src="../iphone.webp" alt="Top 1">
                 <h3>Apple iPhone 15 Pro 512GB Black Titanium<br><br>Homecorp</h3>
                 <div class="price-addtoCartbutton">
                     <p>P31,999 from P34,199</p>
@@ -167,60 +171,60 @@
     <div class="more-tech">
         <div class="scroll-container">
             <a href="homecorp.html">
-                <img src="appli 8.jpeg" alt="appliance">
+                <img src="../appli 8.jpeg" alt="appliance">
             </a>
             <a href="homecorp.html">
-                <img src="appli 1.jpeg" alt="appliance">
+                <img src="../appli 1.jpeg" alt="appliance">
             </a>
             <a href="homecorp.html">
-                <img src="appli 5.jpeg" alt="appliance">
+                <img src="../appli 5.jpeg" alt="appliance">
             </a>
-            <a href="incredible-connections.html">
-                <img src="acc 6.webp" alt="accessory">
+            <a href="incredible-connections.php">
+                <img src="../acc 6.webp" alt="accessory">
             </a>
-            <a href="incredible-connections.html">
-                <img src="acc 4.webp" alt="accessory">
+            <a href="incredible-connections.php">
+                <img src="../acc 4.webp" alt="accessory">
             </a>
-            <a href="incredible-connections.html">
-                <img src="acc 3.webp" alt="accessory">
-            </a>
-            <a href="homecorp.html">
-                <img src="phone 3.jpeg" alt="phone">
+            <a href="incredible-connections.php">
+                <img src="../acc 3.webp" alt="accessory">
             </a>
             <a href="homecorp.html">
-                <img src="media 1.jpeg" alt="media">
+                <img src="../phone 3.jpeg" alt="phone">
             </a>
             <a href="homecorp.html">
-                <img src="media 4.jpeg" alt="media">
+                <img src="../media 1.jpeg" alt="media">
+            </a>
+            <a href="homecorp.html">
+                <img src="../media 4.jpeg" alt="media">
             </a>
         </div>
         <div class="scroll-container">
             <a href="homecorp.html">
-                <img src="appli 8.jpeg" alt="appliance">
+                <img src="../appli 8.jpeg" alt="appliance">
             </a>
             <a href="homecorp.html">
-                <img src="appli 1.jpeg" alt="appliance">
+                <img src="../appli 1.jpeg" alt="appliance">
             </a>
             <a href="homecorp.html">
-                <img src="appli 5.jpeg" alt="appliance">
+                <img src="../appli 5.jpeg" alt="appliance">
             </a>
-            <a href="incredible-connections.html">
-                <img src="acc 6.webp" alt="accessory">
+            <a href="incredible-connections.php">
+                <img src="../acc 6.webp" alt="accessory">
             </a>
-            <a href="incredible-connections.html">
-                <img src="acc 4.webp" alt="accessory">
+            <a href="incredible-connections.php">
+                <img src="../acc 4.webp" alt="accessory">
             </a>
-            <a href="incredible-connections.html">
-                <img src="acc 3.webp" alt="accessory">
-            </a>
-            <a href="homecorp.html">
-                <img src="phone 3.jpeg" alt="phone">
+            <a href="incredible-connections.php">
+                <img src="../acc 3.webp" alt="accessory">
             </a>
             <a href="homecorp.html">
-                <img src="media 1.jpeg" alt="media">
+                <img src="../phone 3.jpeg" alt="phone">
             </a>
             <a href="homecorp.html">
-                <img src="media 4.jpeg" alt="media">
+                <img src="../media 1.jpeg" alt="media">
+            </a>
+            <a href="homecorp.html">
+                <img src="../media 4.jpeg" alt="media">
             </a>
         </div>
     </div>
@@ -231,7 +235,7 @@
         <h2>Tech Accessories</h2>
         <div class="product-row">
             <div class="product">
-                <img src="outdoortech1.webp" alt="outdoor1">
+                <img src="../outdoortech1.webp" alt="outdoor1">
                 <h3>TP-Link Tapo C500 Outdoor Security WiFi Camera<br><br>Incredible Connections</h3>
                 <div class="price-addtoCartbutton">
                     <p>P999.00</p>
@@ -239,7 +243,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="outdoortech2.webp" alt="outdoor2">
+                <img src="../outdoortech2.webp" alt="outdoor2">
                 <h3>Xiaomi 1080p Wireless Outdoor Security Camera Set<br><br>Incredible Connections</h3>
                 <div class="price-addtoCartbutton">
                     <p>P1,999.00</p>
@@ -247,7 +251,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="outdoortech3.jpeg" alt="outdoor3">
+                <img src="../outdoortech3.jpeg" alt="outdoor3">
                 <h3>KARCHER K3 POWER CONTROL PRESSURE WASHER<br><br>Homecorp</h3>
                 <div class="price-addtoCartbutton">
                     <p>P2,799.00</p>
@@ -255,7 +259,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="outdoortech4.jpeg" alt="outdoor4">
+                <img src="../outdoortech4.jpeg" alt="outdoor4">
                 <h3>SWITCHED 120 LUMEN LED LIGHT SWITCH SWD50019<br><br>Homecorp</h3>
                 <div class="price-addtoCartbutton">
                     <p>P69.00</p>
@@ -263,7 +267,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="outdoortech5.png" alt="outdoor5">
+                <img src="../outdoortech5.png" alt="outdoor5">
                 <h3>Alva Short Stand Firepit Patio Heater GHP38<br><br>Incredible Connections</h3>
                 <div class="price-addtoCartbutton">
                     <p>P4,199.00</p>
@@ -286,26 +290,26 @@
             <nav>
                 <ul>
                     <li><h3>Site Links</h3></li>
-                    <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+                    <li><a href="home.php" style="text-decoration: none;">Home</a></li>
                     <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
-                    <li><a href="Fashion.html" style="text-decoration: none;">Fashion</a></li>
+                    <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
                     <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
                     <li><a href="home-office.html" style="text-decoration: none;">Home and Office</a></li>
-                    <li><a href="outdoor.html" style="text-decoration: none;">Outdoor</a></li>
+                    <li><a href="orders.php" style="text-decoration: none;">My Orders</a></li>
                     <li><a href="Form.html" style="text-decoration: none;">Join Us</a></li>
                 </ul>
             </nav>
             <img src="staggalogosmall.png" alt="WarnerBrosPicture">
         </div>
-
+    
        
         <div class="socials">
-            <a href="https://www.facebook.com"><i class="fab fa-facebook grow"></i></a>
-            <a href="https://twitter.com"><i class="fab fa-twitter-square grow"></i></a>
-            <a href="https://www.instagram.com"><i class="fab fa-instagram grow"></i></a>
+            <a href="https://www.facebook.com/WarnerBrosPictures/"><i class="fab fa-facebook grow"></i></a>
+            <a href="https://twitter.com/warnerbros?lang=en"><i class="fab fa-twitter-square grow"></i></a>
+            <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
             <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
         </div>
-    </footer>
+    </footer> 
 
     <script src="script.js"></script>
 </body>

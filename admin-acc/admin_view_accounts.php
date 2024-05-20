@@ -24,7 +24,7 @@ $sellers = $stmtSellers->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Accounts</title>
-    <link rel="stylesheet" href="admin_view_accounts.css"> <!-- Include your CSS file here -->
+    <link rel="stylesheet" href="admin_view_accounts.css"> 
 </head>
 <body>
     <div class="container">

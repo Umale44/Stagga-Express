@@ -162,7 +162,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 1px;
-            width: 50px; /* Adjust the width as needed */
+            width: 50px; 
             margin-bottom:15px;
         }
         option{
@@ -185,7 +185,7 @@
                 <a href="#">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
                 <a href="orders.php">My Orders</a>
-                <a href="logout.php">Log out</a>
+                <a href="../includes/logout.php">Log out</a>
 
             </div>
         </div>
@@ -318,9 +318,9 @@ foreach ($organizedProducts as $category => $products) {
 
        
         <div class="socials">
-            <a href="https://www.facebook.com/WarnerBrosPictures/"><i class="fab fa-facebook grow"></i></a>
-            <a href="https://twitter.com/warnerbros?lang=en"><i class="fab fa-twitter-square grow"></i></a>
-            <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook grow"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter-square grow"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram grow"></i></a>
             <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
         </div>
     </footer>  

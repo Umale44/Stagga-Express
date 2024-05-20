@@ -8,12 +8,13 @@ if (!isset($_SESSION['admin'])) {
     exit();
 }
 
-// Fetch new products from the newproduct table
-$sql = "SELECT p.newProductID, p.productName, p.price, p.image, p.productDetail, p.quantity, p.category, s.storeName
-        FROM newproduct p
-        JOIN store s ON p.storeID = s.storeID";
+// Fetch products along with their quantity from the stock table
+$sql = "SELECT p.productID, p.productName, p.price, p.image, p.productDetail, p.category, s.quantity, st.storeName 
+        FROM product p
+        JOIN stock s ON p.productID = s.productID
+        JOIN store st ON p.storeID = st.storeID";
 $stmt = $pdo->query($sql);
-$newProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +22,12 @@ $newProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Products</title>
-    <link rel="stylesheet" href="admin_view_accounts.css"> 
+    <title>View Products</title>
+    <link rel="stylesheet" href="admin_view_accounts.css"> <!-- Add your CSS file here -->
 </head>
 <body>
     <div class="container">
-    <h1>New Products</h1>
+    <h1>View Products</h1>
     <a href="admin_dashboard.php" id=backtodashboard>Back to dashboard</a>
     <table>
         <thead>
@@ -38,13 +39,14 @@ $newProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>Quantity</th>
                 <th>Category</th>
                 <th>Store Name</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($newProducts as $product) : ?>
+            <?php foreach ($products as $product) : ?>
                 <tr>
-                    <form action="addproduct.php" method="post">
-                        <input type="hidden" name="newProductID" value="<?php echo htmlspecialchars($product['newProductID']); ?>">
+                    <form action="" method="post">
+                        <input type="hidden" name="productID" value="<?php echo htmlspecialchars($product['productID']); ?>">
                         <td><?php echo htmlspecialchars($product['productName']); ?></td>
                         <td><?php echo htmlspecialchars($product['price']); ?></td>
                         <td><img src="../<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['productName']); ?>" width="100"></td>
@@ -54,13 +56,27 @@ $newProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </td>
                         <td><?php echo htmlspecialchars($product['category']); ?></td>
                         <td><?php echo htmlspecialchars($product['storeName']); ?></td>
-                        <td><button type="submit" name="addProduct" class="submit-btn">Add Product</button></td>
+                        <td><button type="submit" name="updateProduct" class="submit-btn">Update</button></td>
                     </form>
                 </tr>
-
             <?php endforeach; ?>
         </tbody>
     </table>
     </div>
 </body>
 </html>
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $productID = $_POST['productID'];
+    $quantity = $_POST['quantity'];
+
+    // Update the quantity in the stock table
+    $sql = "UPDATE stock SET quantity = ? WHERE productID = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$quantity, $productID]);
+
+    echo '<script>alert("Product updated successfully."); window.location.href="ViewProducts.php";</script>';
+}
+?>
+

@@ -6,7 +6,7 @@
     <title>Stagga Express | The Home of express delivery | Checkout</title>
     <link rel="icon" href="staggalogosmall.png"
 		type="image/x-icon">
-    <link rel="stylesheet" href="checkout.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="checkout.css"> 
 </head>
 <body>
     <div class="main-container">

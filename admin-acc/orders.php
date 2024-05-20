@@ -23,7 +23,7 @@
             background-color: #f2f2f2;
         }
         #header{
-            height: 100px; /* Adjust the height as needed */
+            height: 100px; 
         }
         #backtodashboard{
             margin-top: 10px;

@@ -12,13 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require_once "connection.php";
 
+        // Hash the password before storing it
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
         // Insert user into users table
         $query = "INSERT INTO users (username, password, usertype) VALUES (:username, :password, 'customer')";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":password", $password);
+        $stmt->bindParam(":password", $hashedPassword);
         $stmt->execute();
-
 
         // Insert customer details into customer table
         $query = "INSERT INTO customer (username, firstname, surname, address, emailAddress, age) VALUES (:username, :firstname, :surname, :address, :emailAddress, :age)";
@@ -33,12 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $pdo = null;
         $stmt = null;
-        
-        
+
         echo '<script>alert("Sign up successful. Click OK to proceed to login."); window.location = "login.php";</script>';
         exit(); // Prevent further execution
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }
 }
-
+?>

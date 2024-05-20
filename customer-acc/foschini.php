@@ -162,7 +162,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 1px;
-            width: 50px; /* Adjust the width as needed */
+            width: 50px; 
             margin-bottom:15px;
         }
         option{
@@ -181,8 +181,8 @@
             <div class="dropdown-content">
                 <a href="store.html">Stores</a>
                 <a href="fashion.html">Fashion</a>
-                <a href="#">Electronics</a>
-                <a href="#">Home & Office</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="home-office.html">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
                 <a href="orders.php">My Orders</a>
                 <a href="logout.php">Log out</a>
@@ -308,7 +308,7 @@ foreach ($organizedProducts as $category => $products) {
                     <li><a href="store.html" style="text-decoration: none;">Stores</a></li>
                     <li><a href="fashion.html" style="text-decoration: none;">Fashion</a></li>
                     <li><a href="electronics.html" style="text-decoration: none;">Electronics</a></li>
-                    <li><a href="homeandoffice.html" style="text-decoration: none;">Home and Office</a></li>
+                    <li><a href="home-office.html" style="text-decoration: none;">Home and Office</a></li>
                     <li><a href="orders.php" style="text-decoration: none;">My Orders</a></li>
                     <li><a href="Form.html" style="text-decoration: none;">Join Us</a></li>
                 </ul>
@@ -318,9 +318,9 @@ foreach ($organizedProducts as $category => $products) {
 
        
         <div class="socials">
-            <a href="https://www.facebook.com/WarnerBrosPictures/"><i class="fab fa-facebook grow"></i></a>
-            <a href="https://twitter.com/warnerbros?lang=en"><i class="fab fa-twitter-square grow"></i></a>
-            <a href="https://www.instagram.com/wbpictures/?hl=en"><i class="fab fa-instagram grow"></i></a>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook grow"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter-square grow"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram grow"></i></a>
             <span style="margin-right: 10px;"></span>TM & © 2024 Stagga Express. All rights reserved.
         </div>
     </footer>  
