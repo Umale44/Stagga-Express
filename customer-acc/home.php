@@ -100,8 +100,8 @@ if (!isset($_SESSION['customer'])) {
             <div class="dropdown-content">
                 <a href="store.html">Stores</a>
                 <a href="fashion.html">Fashion</a>
-                <a href="#">Electronics</a>
-                <a href="#">Home & Office</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="home-office.html">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
                 <a href="orders.php">My Orders</a>
                 <a href="../includes/logout.php">Log out</a>

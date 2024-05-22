@@ -38,12 +38,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             try {
                 require_once "includes/connection.php";
+                
+                // Hash the password before storing it
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
                 // Insert user into users table
                 $query = "INSERT INTO users (username, password, usertype) VALUES (:username, :password, 'business')";
                 $stmt = $pdo->prepare($query);
                 $stmt->bindParam(":username", $username);
-                $stmt->bindParam(":password", $password);
+                $stmt->bindParam(":password", $hashedPassword);
                 $stmt->execute();
 
                 // Insert store details into store table

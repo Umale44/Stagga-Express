@@ -106,13 +106,13 @@ html, body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background: none;
-    min-width: 200px;
-    height: 100px;
+    background: black;
+    min-width: 300px;
     z-index: 2;
     border: none;
     outline: none;
     margin-left:-4.2%;
+    height:700px;
 }
 
 .dropdown-content a {
@@ -409,11 +409,11 @@ html, body {
         position: absolute;
         background: none;
         min-width: 200px;
-        height: 100px;
         z-index: 2;
         border: none;
         outline: none;
         margin-left:-4.2%;
+        height:700px;
     }
     
     .dropdown-content a {

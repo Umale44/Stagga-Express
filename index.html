@@ -78,7 +78,25 @@
             .store-info img:hover {
                 filter: brightness(100%);
             }
-
+            @media (max-width: 434px) {
+                .website-description h1{
+                    font-size: 45px;
+                    background:none;
+                }
+                .website-description p{
+                    font-size:12px;
+                    background:none;
+                }
+                #section2 #repetition, #section3 #repetition{
+                    display: none;
+                }
+                .store-info{
+                    margin-right: 0px;
+                }
+                .store-info img{
+                    filter: brightness(100%);
+                }
+            }
             
         </style>
 </head>
@@ -174,7 +192,7 @@
             </div>
         </div>
 
-        <div class= "deals-of-the-week-container">
+        <div class= "deals-of-the-week-container" id="repetition">
             <div class="product">
                 <img src="LG.png" alt="deal 1">
                 <h3>LG OLED etc.....</h3>
@@ -216,7 +234,7 @@
                 </div>
             </div>
         </div>
-        <div class= "deals-of-the-week-container">
+        <div class= "deals-of-the-week-container" id="repetition">
             <div class="product">
                 <img src="LG.png" alt="deal 1">
                 <h3>LG OLED etc.....</h3>
@@ -321,7 +339,7 @@
             </div>
         </div>
 
-        <div class= "deals-of-the-week-container" id="deals-container2">
+        <div class= "deals-of-the-week-container" id="repetition">
             <div class="product">
                 <img src="Foschini jacket 1.webp" alt="deal 1">
                 <h3>Melton Kimono Sleeve Coat</h3>
@@ -379,7 +397,7 @@
                 </div>
             </div>
         </div>
-        <div class= "deals-of-the-week-container" id="deals-container3">
+        <div class= "deals-of-the-week-container" id="repetition">
             <div class="product">
                 <img src="Foschini jacket 1.webp" alt="deal 1">
                 <h3>Melton Kimono Sleeve Coat</h3>
@@ -458,7 +476,7 @@
         <div class="store-info">
             <a href="incredible-connections.html"><img src="Incredibleconec.png"class="Store Image"></a>
             <div class="store-details">
-                <h2>Incredible Connections</h2>
+                <h2>Incredible<br>Connections</h2>
                 <div class="rating">Rating: 4.2</div>
             </div>
         </div>

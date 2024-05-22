@@ -304,7 +304,7 @@
          
     <h2>Your Store Information</h2>
     <?php echo "Store ID: " . $storeID; // Output the store ID?>
-    <h2>Your Products</h2>
+    
     <?php
     include '../includes/connection.php';
 
@@ -315,6 +315,7 @@
         echo "<div class='pending-message'>Your Seller account is currently being Processed.</div>";
 
     }elseif ($status == 'Active') {
+        echo"<h2>Your Products</h2>";
     $sql = "SELECT * FROM product WHERE storeID = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$storeID]);

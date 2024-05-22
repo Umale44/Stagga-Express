@@ -21,7 +21,7 @@
                 <a href="home-office.html">Home & Office</a>
                 <a href="outdoor.html">Outdoor</a>
                 <a href="orders.php">My Orders</a>
-                <a href="..includes/logout.php">Log out</a>
+                <a href="../includes/logout.php">Log out</a>
 
             </div>
         </div>

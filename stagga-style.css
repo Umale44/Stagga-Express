@@ -112,13 +112,13 @@ html, body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background: none;
-    min-width: 200px;
-    height: 100px;
+    background: black;
+    min-width: 300px;
     z-index: 2;
     border: none;
     outline: none;
     margin-left:-4.2%;
+    height:700px;
 }
 
 .dropdown-content a {
@@ -413,13 +413,15 @@ html, body {
     .dropdown-content {
         display: none;
         position: absolute;
-        background: none;
+        background: black;
         min-width: 200px;
-        height: 100px;
+        height: 900px;
         z-index: 2;
         border: none;
         outline: none;
-        margin-left:-4.2%;
+        margin-left:-6%;
+        margin-top: 41px;
+
     }
     
     .dropdown-content a {
@@ -442,10 +444,12 @@ html, body {
         display: inline-block;
         overflow: hidden;
         padding-bottom: 5%;
-        margin-bottom: 10%;
-        margin-left: 100px;
+        margin-bottom: 50px;
+        margin-left: 10px;
     }
-    
+    .deals-of-the-week-container h3{
+        margin-bottom: 30px;
+    }
     .image-scroller-container::-webkit-scrollbar {
         display: none;
       }
@@ -455,39 +459,84 @@ html, body {
       }
     
     .image-scroller-container img {
-        width: 850px;
-        height: 350px;
+        width: 1200px;
+        height: 800px;
         aspect-ratio: 2 / 3;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
       }
+      .sectionImg{
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        height: 800px;
+    }
     
       .deals-of-the-week-container img {
         width: 100%;
         height: 220px;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
       }
-     
+      #section2 .deals-of-the-week-container, #section3 .deals-of-the-week-container{
+        display: flex;
+        white-space: nowrap;
+        animation: none;
+    }
+    #section2, #section3{
+        display: flex;
+        overflow-x:scroll;
+        white-space: nowrap;
+        position: relative;
+        scrollbar-width: none;
+        margin-bottom: 0px;
+    }
+    #section4{
+        display: grid;
+        justify-content: center;
+        margin-bottom: 0px;
+        margin-top: 50px;
+    }
+    .store-info{
+        display: grid;
+        justify-content: center;
+    }
+    .store-info .store-details{
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+    .store-info .store-details h2, .store-info .store-details .rating{
+        display: grid;
+        justify-content: center;
+    }
 
     .navbar {
         /* Adjust footer layout for smaller screens */
         flex-direction: column;
         align-items: center;
-        text-align: center;
+       
       }
     
       .container2 {
         /* Adjust container width */
         width: 90%;
+        display: grid;
       }
     
+      .container2 ul{
+        padding: 10px;
+        
+      }
+      
       .socials {
         /* Adjust social icons margin */
         margin-top: 20px;
+        margin-left: 0px;
       }
     
       /* Hide the logo on smaller screens */
-      footer img {
-        display: none;
+        .container2 img {
+        height:120px;
+        width: auto;
+        margin-left: 0px;
       }
   }
   

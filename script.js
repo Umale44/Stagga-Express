@@ -63,9 +63,9 @@ window.addEventListener("load", initSlider);
 
 /*SAME FOR THE PANTS SECTION*/
 
-const initSliderPants = () => {
-    const imageList = document.querySelector(".slidePants .product-rowPants");
-    const slideButtons = document.querySelectorAll(".slidePants .slide-button");
+const initSlider2 = () => {
+    const imageList = document.querySelector(".sliderwrapper .product-row");
+    const slideButtons = document.querySelectorAll(".sliderwrapper .slide-button");
     const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
