@@ -415,7 +415,7 @@ html, body {
         position: absolute;
         background: black;
         min-width: 200px;
-        height: 900px;
+        height: 630px;
         z-index: 2;
         border: none;
         outline: none;
@@ -439,7 +439,7 @@ html, body {
     .dropdown:hover .dropdown-content {
         display: block;
     }
-
+    
     .deals-of-the-week-container .product {
         display: inline-block;
         overflow: hidden;
@@ -460,7 +460,7 @@ html, body {
     
     .image-scroller-container img {
         width: 1200px;
-        height: 800px;
+        height: 630px;
         aspect-ratio: 2 / 3;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
       }
@@ -468,7 +468,7 @@ html, body {
         overflow: hidden;
         white-space: nowrap;
         position: relative;
-        height: 800px;
+        height: 630px;
     }
     
       .deals-of-the-week-container img {
